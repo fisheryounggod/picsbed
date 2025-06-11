@@ -1,0 +1,768 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style media="screen">body,html{scroll-snap-points-y:repeat(100%);background:#000;height:100%;margin:0;overflow:auto;scroll-snap-type:y mandatory;scroll-snap-type:mandatory}body>svg{display:block;height:100%;scroll-snap-align:center center;width:100%}</style><style>svg>foreignObject>section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center}svg>foreignObject>section:after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}svg>foreignObject>section:not([data-marpit-pagination]):after{display:none}/* Normalization */svg>foreignObject>section :is(h1,marp-h1){font-size:2em;margin:0.67em 0}svg>foreignObject>section video::-webkit-media-controls{will-change:transform}@page{size:1280px 720px;margin:0}@media print{body,html{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}svg>foreignObject>section{page-break-before:always;break-before:page}svg>foreignObject>section,svg>foreignObject>section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;transition:none!important}svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}
+/*!
+ * Marp default theme.
+ *
+ * @theme default
+ * @author Yuki Hattori
+ *
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */svg>foreignObject>section,svg>foreignObject>section [data-theme=light]{--color-prettylights-syntax-comment:#6e7781;--color-prettylights-syntax-constant:#0550ae;--color-prettylights-syntax-entity:#6639ba;--color-prettylights-syntax-storage-modifier-import:#24292f;--color-prettylights-syntax-entity-tag:#116329;--color-prettylights-syntax-keyword:#cf222e;--color-prettylights-syntax-string:#0a3069;--color-prettylights-syntax-variable:#953800;--color-prettylights-syntax-brackethighlighter-unmatched:#82071e;--color-prettylights-syntax-invalid-illegal-text:#f6f8fa;--color-prettylights-syntax-invalid-illegal-bg:#82071e;--color-prettylights-syntax-carriage-return-text:#f6f8fa;--color-prettylights-syntax-carriage-return-bg:#cf222e;--color-prettylights-syntax-string-regexp:#116329;--color-prettylights-syntax-markup-list:#3b2300;--color-prettylights-syntax-markup-heading:#0550ae;--color-prettylights-syntax-markup-italic:#24292f;--color-prettylights-syntax-markup-bold:#24292f;--color-prettylights-syntax-markup-deleted-text:#82071e;--color-prettylights-syntax-markup-deleted-bg:#ffebe9;--color-prettylights-syntax-markup-inserted-text:#116329;--color-prettylights-syntax-markup-inserted-bg:#dafbe1;--color-prettylights-syntax-markup-changed-text:#953800;--color-prettylights-syntax-markup-changed-bg:#ffd8b5;--color-prettylights-syntax-markup-ignored-text:#eaeef2;--color-prettylights-syntax-markup-ignored-bg:#0550ae;--color-prettylights-syntax-meta-diff-range:#8250df;--color-prettylights-syntax-brackethighlighter-angle:#57606a;--color-prettylights-syntax-sublimelinter-gutter-mark:#8c959f;--color-prettylights-syntax-constant-other-reference-link:#0a3069;--color-fg-default:#1f2328;--color-fg-muted:#656d76;--color-fg-subtle:#6e7781;--color-canvas-default:#fff;--color-canvas-subtle:#f6f8fa;--color-border-default:#d0d7de;--color-border-muted:#d8dee4;--color-neutral-muted:rgba(175,184,193,.2);--color-accent-fg:#0969da;--color-accent-emphasis:#0969da;--color-attention-subtle:#fff8c5;--color-danger-fg:#d1242f;color-scheme:light}svg>foreignObject>section [data-theme=dark],svg>foreignObject>section:where(.invert){--color-prettylights-syntax-comment:#8b949e;--color-prettylights-syntax-constant:#79c0ff;--color-prettylights-syntax-entity:#d2a8ff;--color-prettylights-syntax-storage-modifier-import:#c9d1d9;--color-prettylights-syntax-entity-tag:#7ee787;--color-prettylights-syntax-keyword:#ff7b72;--color-prettylights-syntax-string:#a5d6ff;--color-prettylights-syntax-variable:#ffa657;--color-prettylights-syntax-brackethighlighter-unmatched:#f85149;--color-prettylights-syntax-invalid-illegal-text:#f0f6fc;--color-prettylights-syntax-invalid-illegal-bg:#8e1519;--color-prettylights-syntax-carriage-return-text:#f0f6fc;--color-prettylights-syntax-carriage-return-bg:#b62324;--color-prettylights-syntax-string-regexp:#7ee787;--color-prettylights-syntax-markup-list:#f2cc60;--color-prettylights-syntax-markup-heading:#1f6feb;--color-prettylights-syntax-markup-italic:#c9d1d9;--color-prettylights-syntax-markup-bold:#c9d1d9;--color-prettylights-syntax-markup-deleted-text:#ffdcd7;--color-prettylights-syntax-markup-deleted-bg:#67060c;--color-prettylights-syntax-markup-inserted-text:#aff5b4;--color-prettylights-syntax-markup-inserted-bg:#033a16;--color-prettylights-syntax-markup-changed-text:#ffdfb6;--color-prettylights-syntax-markup-changed-bg:#5a1e02;--color-prettylights-syntax-markup-ignored-text:#c9d1d9;--color-prettylights-syntax-markup-ignored-bg:#1158c7;--color-prettylights-syntax-meta-diff-range:#d2a8ff;--color-prettylights-syntax-brackethighlighter-angle:#8b949e;--color-prettylights-syntax-sublimelinter-gutter-mark:#484f58;--color-prettylights-syntax-constant-other-reference-link:#a5d6ff;--color-fg-default:#e6edf3;--color-fg-muted:#7d8590;--color-fg-subtle:#6e7681;--color-canvas-default:#0d1117;--color-canvas-subtle:#161b22;--color-border-default:#30363d;--color-border-muted:#21262d;--color-neutral-muted:hsla(215,8%,47%,.4);--color-accent-fg:#2f81f7;--color-accent-emphasis:#1f6feb;--color-attention-subtle:rgba(187,128,9,.15);--color-danger-fg:#f85149;color-scheme:dark}svg>foreignObject>section{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;word-wrap:break-word;background-color:var(--color-canvas-default);color:var(--color-fg-default);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Noto Sans,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;font-size:16px;line-height:1.5;margin:0}svg>foreignObject>section{--marpit-root-font-size:16px}svg>foreignObject>section :is(h1,marp-h1):hover .anchor .octicon-link:before,svg>foreignObject>section :is(h2,marp-h2):hover .anchor .octicon-link:before,svg>foreignObject>section :is(h3,marp-h3):hover .anchor .octicon-link:before,svg>foreignObject>section :is(h4,marp-h4):hover .anchor .octicon-link:before,svg>foreignObject>section :is(h5,marp-h5):hover .anchor .octicon-link:before,svg>foreignObject>section :is(h6,marp-h6):hover .anchor .octicon-link:before{background-color:currentColor;content:" ";display:inline-block;height:16px;-webkit-mask-image:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 0 0 1.06 1.06l1.25-1.25a2 2 0 1 1 2.83 2.83l-2.5 2.5a2 2 0 0 1-2.83 0 .75.75 0 0 0-1.06 1.06 3.5 3.5 0 0 0 4.95 0l2.5-2.5a3.5 3.5 0 0 0-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 0 1 0-2.83l2.5-2.5a2 2 0 0 1 2.83 0 .75.75 0 0 0 1.06-1.06 3.5 3.5 0 0 0-4.95 0l-2.5 2.5a3.5 3.5 0 0 0 4.95 4.95l1.25-1.25a.75.75 0 0 0-1.06-1.06l-1.25 1.25a2 2 0 0 1-2.83 0z"/></svg>');mask-image:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 0 0 1.06 1.06l1.25-1.25a2 2 0 1 1 2.83 2.83l-2.5 2.5a2 2 0 0 1-2.83 0 .75.75 0 0 0-1.06 1.06 3.5 3.5 0 0 0 4.95 0l2.5-2.5a3.5 3.5 0 0 0-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 0 1 0-2.83l2.5-2.5a2 2 0 0 1 2.83 0 .75.75 0 0 0 1.06-1.06 3.5 3.5 0 0 0-4.95 0l-2.5 2.5a3.5 3.5 0 0 0 4.95 4.95l1.25-1.25a.75.75 0 0 0-1.06-1.06l-1.25 1.25a2 2 0 0 1-2.83 0z"/></svg>');width:16px}svg>foreignObject>section details,svg>foreignObject>section figcaption,svg>foreignObject>section figure{display:block}svg>foreignObject>section summary{display:list-item}svg>foreignObject>section [hidden]{display:none!important}svg>foreignObject>section a{background-color:transparent;color:var(--color-accent-fg);text-decoration:none}svg>foreignObject>section abbr[title]{border-bottom:none;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}svg>foreignObject>section b,svg>foreignObject>section strong{font-weight:var(--base-text-weight-semibold,600)}svg>foreignObject>section dfn{font-style:italic}svg>foreignObject>section :is(h1,marp-h1){border-bottom:1px solid var(--color-border-muted);font-size:2em;font-weight:var(--base-text-weight-semibold,600);margin:.67em 0;padding-bottom:.3em}svg>foreignObject>section mark{background-color:var(--color-attention-subtle);color:var(--color-fg-default)}svg>foreignObject>section small{font-size:90%}svg>foreignObject>section sub,svg>foreignObject>section sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}svg>foreignObject>section sub{bottom:-.25em}svg>foreignObject>section sup{top:-.5em}svg>foreignObject>section img{background-color:var(--color-canvas-default);border-style:none;box-sizing:content-box;max-width:100%}svg>foreignObject>section :is(pre,marp-pre),svg>foreignObject>section code,svg>foreignObject>section kbd,svg>foreignObject>section samp{font-family:monospace;font-size:1em}svg>foreignObject>section figure{margin:1em 40px}svg>foreignObject>section hr{background:transparent;background-color:var(--color-border-default);border:0;box-sizing:content-box;height:.25em;margin:24px 0;overflow:hidden;padding:0}svg>foreignObject>section input{font:inherit;font-family:inherit;font-size:inherit;line-height:inherit;margin:0;overflow:visible}svg>foreignObject>section [type=button],svg>foreignObject>section [type=reset],svg>foreignObject>section [type=submit]{-webkit-appearance:button}svg>foreignObject>section [type=checkbox],svg>foreignObject>section [type=radio]{box-sizing:border-box;padding:0}svg>foreignObject>section [type=number]::-webkit-inner-spin-button,svg>foreignObject>section [type=number]::-webkit-outer-spin-button{height:auto}svg>foreignObject>section [type=search]::-webkit-search-cancel-button,svg>foreignObject>section [type=search]::-webkit-search-decoration{-webkit-appearance:none}svg>foreignObject>section ::-webkit-input-placeholder{color:inherit;opacity:.54}svg>foreignObject>section ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}svg>foreignObject>section a:hover{text-decoration:underline}svg>foreignObject>section ::-moz-placeholder{color:var(--color-fg-subtle);opacity:1}svg>foreignObject>section ::placeholder{color:var(--color-fg-subtle);opacity:1}svg>foreignObject>section hr:after,svg>foreignObject>section hr:before{content:"";display:table}svg>foreignObject>section hr:after{clear:both}svg>foreignObject>section table{border-collapse:collapse;border-spacing:0;display:block;max-width:100%;overflow:auto;width:-moz-max-content;width:max-content}svg>foreignObject>section td,svg>foreignObject>section th{padding:0}svg>foreignObject>section details summary{cursor:pointer}svg>foreignObject>section details:not([open])>:not(summary){display:none!important}svg>foreignObject>section [role=button]:focus,svg>foreignObject>section a:focus,svg>foreignObject>section input[type=checkbox]:focus,svg>foreignObject>section input[type=radio]:focus{box-shadow:none;outline:2px solid var(--color-accent-fg);outline-offset:-2px}svg>foreignObject>section [role=button]:focus:not(:focus-visible),svg>foreignObject>section a:focus:not(:focus-visible),svg>foreignObject>section input[type=checkbox]:focus:not(:focus-visible),svg>foreignObject>section input[type=radio]:focus:not(:focus-visible){outline:1px solid transparent}svg>foreignObject>section [role=button]:focus-visible,svg>foreignObject>section a:focus-visible,svg>foreignObject>section input[type=checkbox]:focus-visible,svg>foreignObject>section input[type=radio]:focus-visible{box-shadow:none;outline:2px solid var(--color-accent-fg);outline-offset:-2px}svg>foreignObject>section a:not([class]):focus,svg>foreignObject>section a:not([class]):focus-visible,svg>foreignObject>section input[type=checkbox]:focus,svg>foreignObject>section input[type=checkbox]:focus-visible,svg>foreignObject>section input[type=radio]:focus,svg>foreignObject>section input[type=radio]:focus-visible{outline-offset:0}svg>foreignObject>section kbd{background-color:var(--color-canvas-subtle);border-bottom-color:var(--color-neutral-muted);border:1px solid var(--color-neutral-muted);border-radius:6px;box-shadow:inset 0 -1px 0 var(--color-neutral-muted);color:var(--color-fg-default);display:inline-block;font:11px ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;line-height:10px;padding:3px 5px;vertical-align:middle}svg>foreignObject>section :is(h1,marp-h1),svg>foreignObject>section :is(h2,marp-h2),svg>foreignObject>section :is(h3,marp-h3),svg>foreignObject>section :is(h4,marp-h4),svg>foreignObject>section :is(h5,marp-h5),svg>foreignObject>section :is(h6,marp-h6){font-weight:var(--base-text-weight-semibold,600);line-height:1.25;margin-bottom:16px;margin-top:24px}svg>foreignObject>section :is(h2,marp-h2){border-bottom:1px solid var(--color-border-muted);font-size:1.5em;padding-bottom:.3em}svg>foreignObject>section :is(h2,marp-h2),svg>foreignObject>section :is(h3,marp-h3){font-weight:var(--base-text-weight-semibold,600)}svg>foreignObject>section :is(h3,marp-h3){font-size:1.25em}svg>foreignObject>section :is(h4,marp-h4){font-size:1em}svg>foreignObject>section :is(h4,marp-h4),svg>foreignObject>section :is(h5,marp-h5){font-weight:var(--base-text-weight-semibold,600)}svg>foreignObject>section :is(h5,marp-h5){font-size:.875em}svg>foreignObject>section :is(h6,marp-h6){color:var(--color-fg-muted);font-size:.85em;font-weight:var(--base-text-weight-semibold,600)}svg>foreignObject>section p{margin-bottom:10px;margin-top:0}svg>foreignObject>section blockquote{border-left:.25em solid var(--color-border-default);color:var(--color-fg-muted);margin:0;padding:0 1em}svg>foreignObject>section ol,svg>foreignObject>section ul{margin-bottom:0;margin-top:0;padding-left:2em}svg>foreignObject>section ol ol,svg>foreignObject>section ul ol{list-style-type:lower-roman}svg>foreignObject>section ol ol ol,svg>foreignObject>section ol ul ol,svg>foreignObject>section ul ol ol,svg>foreignObject>section ul ul ol{list-style-type:lower-alpha}svg>foreignObject>section dd{margin-left:0}svg>foreignObject>section :is(pre,marp-pre),svg>foreignObject>section code,svg>foreignObject>section samp,svg>foreignObject>section tt{font-family:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;font-size:12px}svg>foreignObject>section :is(pre,marp-pre){word-wrap:normal;margin-bottom:0;margin-top:0}svg>foreignObject>section .octicon{fill:currentColor;display:inline-block;overflow:visible!important;vertical-align:text-bottom}svg>foreignObject>section input::-webkit-inner-spin-button,svg>foreignObject>section input::-webkit-outer-spin-button{-webkit-appearance:none;appearance:none;margin:0}svg>foreignObject>section:after,svg>foreignObject>section:before{
+  /* content:""; */display:table}svg>foreignObject>section:after{clear:both}svg>foreignObject>section>:first-child{margin-top:0!important}svg>foreignObject>section>:last-child{margin-bottom:0!important}svg>foreignObject>section a:not([href]){color:inherit;text-decoration:none}svg>foreignObject>section .absent{color:var(--color-danger-fg)}svg>foreignObject>section .anchor{float:left;line-height:1;margin-left:-20px;padding-right:4px}svg>foreignObject>section .anchor:focus{outline:none}svg>foreignObject>section :is(pre,marp-pre),svg>foreignObject>section blockquote,svg>foreignObject>section details,svg>foreignObject>section dl,svg>foreignObject>section ol,svg>foreignObject>section p,svg>foreignObject>section table,svg>foreignObject>section ul{margin-bottom:16px;margin-top:0}svg>foreignObject>section blockquote>:first-child{margin-top:0}svg>foreignObject>section blockquote>:last-child{margin-bottom:0}svg>foreignObject>section :is(h1,marp-h1) .octicon-link,svg>foreignObject>section :is(h2,marp-h2) .octicon-link,svg>foreignObject>section :is(h3,marp-h3) .octicon-link,svg>foreignObject>section :is(h4,marp-h4) .octicon-link,svg>foreignObject>section :is(h5,marp-h5) .octicon-link,svg>foreignObject>section :is(h6,marp-h6) .octicon-link{color:var(--color-fg-default);vertical-align:middle;visibility:hidden}svg>foreignObject>section :is(h1,marp-h1):hover .anchor,svg>foreignObject>section :is(h2,marp-h2):hover .anchor,svg>foreignObject>section :is(h3,marp-h3):hover .anchor,svg>foreignObject>section :is(h4,marp-h4):hover .anchor,svg>foreignObject>section :is(h5,marp-h5):hover .anchor,svg>foreignObject>section :is(h6,marp-h6):hover .anchor{text-decoration:none}svg>foreignObject>section :is(h1,marp-h1):hover .anchor .octicon-link,svg>foreignObject>section :is(h2,marp-h2):hover .anchor .octicon-link,svg>foreignObject>section :is(h3,marp-h3):hover .anchor .octicon-link,svg>foreignObject>section :is(h4,marp-h4):hover .anchor .octicon-link,svg>foreignObject>section :is(h5,marp-h5):hover .anchor .octicon-link,svg>foreignObject>section :is(h6,marp-h6):hover .anchor .octicon-link{visibility:visible}svg>foreignObject>section :is(h1,marp-h1) code,svg>foreignObject>section :is(h1,marp-h1) tt,svg>foreignObject>section :is(h2,marp-h2) code,svg>foreignObject>section :is(h2,marp-h2) tt,svg>foreignObject>section :is(h3,marp-h3) code,svg>foreignObject>section :is(h3,marp-h3) tt,svg>foreignObject>section :is(h4,marp-h4) code,svg>foreignObject>section :is(h4,marp-h4) tt,svg>foreignObject>section :is(h5,marp-h5) code,svg>foreignObject>section :is(h5,marp-h5) tt,svg>foreignObject>section :is(h6,marp-h6) code,svg>foreignObject>section :is(h6,marp-h6) tt{font-size:inherit;padding:0 .2em}svg>foreignObject>section summary :is(h1,marp-h1),svg>foreignObject>section summary :is(h2,marp-h2),svg>foreignObject>section summary :is(h3,marp-h3),svg>foreignObject>section summary :is(h4,marp-h4),svg>foreignObject>section summary :is(h5,marp-h5),svg>foreignObject>section summary :is(h6,marp-h6){display:inline-block}svg>foreignObject>section summary :is(h1,marp-h1) .anchor,svg>foreignObject>section summary :is(h2,marp-h2) .anchor,svg>foreignObject>section summary :is(h3,marp-h3) .anchor,svg>foreignObject>section summary :is(h4,marp-h4) .anchor,svg>foreignObject>section summary :is(h5,marp-h5) .anchor,svg>foreignObject>section summary :is(h6,marp-h6) .anchor{margin-left:-40px}svg>foreignObject>section summary :is(h1,marp-h1),svg>foreignObject>section summary :is(h2,marp-h2){border-bottom:0;padding-bottom:0}svg>foreignObject>section ol.no-list,svg>foreignObject>section ul.no-list{list-style-type:none;padding:0}svg>foreignObject>section ol[type="a s"]{list-style-type:lower-alpha}svg>foreignObject>section ol[type="A s"]{list-style-type:upper-alpha}svg>foreignObject>section ol[type="i s"]{list-style-type:lower-roman}svg>foreignObject>section ol[type="I s"]{list-style-type:upper-roman}svg>foreignObject>section div>ol:not([type]),svg>foreignObject>section ol[type="1"]{list-style-type:decimal}svg>foreignObject>section ol ol,svg>foreignObject>section ol ul,svg>foreignObject>section ul ol,svg>foreignObject>section ul ul{margin-bottom:0;margin-top:0}svg>foreignObject>section li>p{margin-top:16px}svg>foreignObject>section li+li{margin-top:.25em}svg>foreignObject>section dl{padding:0}svg>foreignObject>section dl dt{font-size:1em;font-style:italic;font-weight:var(--base-text-weight-semibold,600);margin-top:16px;padding:0}svg>foreignObject>section dl dd{margin-bottom:16px;padding:0 16px}svg>foreignObject>section table th{font-weight:var(--base-text-weight-semibold,600)}svg>foreignObject>section table td,svg>foreignObject>section table th{border:1px solid var(--color-border-default);padding:6px 13px}svg>foreignObject>section table td>:last-child{margin-bottom:0}svg>foreignObject>section table tr{background-color:var(--color-canvas-default);border-top:1px solid var(--color-border-muted)}svg>foreignObject>section table tr:nth-child(2n){background-color:var(--color-canvas-subtle)}svg>foreignObject>section table img{background-color:transparent}svg>foreignObject>section img[align=right]{padding-left:20px}svg>foreignObject>section img[align=left]{padding-right:20px}svg>foreignObject>section .emoji{background-color:transparent;max-width:none;vertical-align:text-top}svg>foreignObject>section :is(span,marp-span).frame,svg>foreignObject>section :is(span,marp-span).frame>:is(span,marp-span){display:block;overflow:hidden}svg>foreignObject>section :is(span,marp-span).frame>:is(span,marp-span){border:1px solid var(--color-border-default);float:left;margin:13px 0 0;padding:7px;width:auto}svg>foreignObject>section :is(span,marp-span).frame :is(span,marp-span) img{display:block;float:left}svg>foreignObject>section :is(span,marp-span).frame :is(span,marp-span) :is(span,marp-span){clear:both;color:var(--color-fg-default);display:block;padding:5px 0 0}svg>foreignObject>section :is(span,marp-span).align-center{clear:both;display:block;overflow:hidden}svg>foreignObject>section :is(span,marp-span).align-center>:is(span,marp-span){display:block;margin:13px auto 0;overflow:hidden;text-align:center}svg>foreignObject>section :is(span,marp-span).align-center :is(span,marp-span) img{margin:0 auto;text-align:center}svg>foreignObject>section :is(span,marp-span).align-right{clear:both;display:block;overflow:hidden}svg>foreignObject>section :is(span,marp-span).align-right>:is(span,marp-span){display:block;margin:13px 0 0;overflow:hidden;text-align:right}svg>foreignObject>section :is(span,marp-span).align-right :is(span,marp-span) img{margin:0;text-align:right}svg>foreignObject>section :is(span,marp-span).float-left{display:block;float:left;margin-right:13px;overflow:hidden}svg>foreignObject>section :is(span,marp-span).float-left :is(span,marp-span){margin:13px 0 0}svg>foreignObject>section :is(span,marp-span).float-right{display:block;float:right;margin-left:13px;overflow:hidden}svg>foreignObject>section :is(span,marp-span).float-right>:is(span,marp-span){display:block;margin:13px auto 0;overflow:hidden;text-align:right}svg>foreignObject>section code,svg>foreignObject>section tt{background-color:var(--color-neutral-muted);border-radius:6px;font-size:85%;margin:0;padding:.2em .4em;white-space:break-spaces}svg>foreignObject>section code br,svg>foreignObject>section tt br{display:none}svg>foreignObject>section del code{text-decoration:inherit}svg>foreignObject>section samp{font-size:85%}svg>foreignObject>section :is(pre,marp-pre) code{font-size:100%}svg>foreignObject>section :is(pre,marp-pre)>code{background:transparent;border:0;margin:0;padding:0;white-space:pre;word-break:normal}svg>foreignObject>section .highlight{margin-bottom:16px}svg>foreignObject>section .highlight :is(pre,marp-pre){margin-bottom:0;word-break:normal}svg>foreignObject>section :is(pre,marp-pre){background-color:var(--color-canvas-subtle);border-radius:6px;color:var(--color-fg-default);font-size:85%;line-height:1.45;overflow:auto;padding:16px}svg>foreignObject>section :is(pre,marp-pre) code,svg>foreignObject>section :is(pre,marp-pre) tt{word-wrap:normal;background-color:transparent;border:0;display:inline;line-height:inherit;margin:0;max-width:auto;overflow:visible;padding:0}svg>foreignObject>section .csv-data td,svg>foreignObject>section .csv-data th{font-size:12px;line-height:1;overflow:hidden;padding:5px;text-align:left;white-space:nowrap}svg>foreignObject>section .csv-data .blob-num{background:var(--color-canvas-default);border:0;padding:10px 8px 9px;text-align:right}svg>foreignObject>section .csv-data tr{border-top:0}svg>foreignObject>section .csv-data th{background:var(--color-canvas-subtle);border-top:0;font-weight:var(--base-text-weight-semibold,600)}svg>foreignObject>section [data-footnote-ref]:before{content:"["}svg>foreignObject>section [data-footnote-ref]:after{content:"]"}svg>foreignObject>section .footnotes{border-top:1px solid var(--color-border-default);color:var(--color-fg-muted);font-size:12px}svg>foreignObject>section>svg>foreignObject>section section.footnotes{--marpit-root-font-size:12px}svg>foreignObject>section .footnotes ol{padding-left:16px}svg>foreignObject>section .footnotes ol ul{display:inline-block;margin-top:16px;padding-left:16px}svg>foreignObject>section .footnotes li{position:relative}svg>foreignObject>section .footnotes li:target:before{border:2px solid var(--color-accent-emphasis);border-radius:6px;bottom:-8px;content:"";left:-24px;pointer-events:none;position:absolute;right:-8px;top:-8px}svg>foreignObject>section .footnotes li:target{color:var(--color-fg-default)}svg>foreignObject>section .footnotes .data-footnote-backref g-emoji{font-family:monospace}svg>foreignObject>section .pl-c{color:var(--color-prettylights-syntax-comment)}svg>foreignObject>section .pl-c1,svg>foreignObject>section .pl-s .pl-v{color:var(--color-prettylights-syntax-constant)}svg>foreignObject>section .pl-e,svg>foreignObject>section .pl-en{color:var(--color-prettylights-syntax-entity)}svg>foreignObject>section .pl-s .pl-s1,svg>foreignObject>section .pl-smi{color:var(--color-prettylights-syntax-storage-modifier-import)}svg>foreignObject>section .pl-ent{color:var(--color-prettylights-syntax-entity-tag)}svg>foreignObject>section .pl-k{color:var(--color-prettylights-syntax-keyword)}svg>foreignObject>section .pl-pds,svg>foreignObject>section .pl-s,svg>foreignObject>section .pl-s .pl-pse .pl-s1,svg>foreignObject>section .pl-sr,svg>foreignObject>section .pl-sr .pl-cce,svg>foreignObject>section .pl-sr .pl-sra,svg>foreignObject>section .pl-sr .pl-sre{color:var(--color-prettylights-syntax-string)}svg>foreignObject>section .pl-smw,svg>foreignObject>section .pl-v{color:var(--color-prettylights-syntax-variable)}svg>foreignObject>section .pl-bu{color:var(--color-prettylights-syntax-brackethighlighter-unmatched)}svg>foreignObject>section .pl-ii{background-color:var(--color-prettylights-syntax-invalid-illegal-bg);color:var(--color-prettylights-syntax-invalid-illegal-text)}svg>foreignObject>section .pl-c2{background-color:var(--color-prettylights-syntax-carriage-return-bg);color:var(--color-prettylights-syntax-carriage-return-text)}svg>foreignObject>section .pl-sr .pl-cce{color:var(--color-prettylights-syntax-string-regexp);font-weight:700}svg>foreignObject>section .pl-ml{color:var(--color-prettylights-syntax-markup-list)}svg>foreignObject>section .pl-mh,svg>foreignObject>section .pl-mh .pl-en,svg>foreignObject>section .pl-ms{color:var(--color-prettylights-syntax-markup-heading);font-weight:700}svg>foreignObject>section .pl-mi{color:var(--color-prettylights-syntax-markup-italic);font-style:italic}svg>foreignObject>section .pl-mb{color:var(--color-prettylights-syntax-markup-bold);font-weight:700}svg>foreignObject>section .pl-md{background-color:var(--color-prettylights-syntax-markup-deleted-bg);color:var(--color-prettylights-syntax-markup-deleted-text)}svg>foreignObject>section .pl-mi1{background-color:var(--color-prettylights-syntax-markup-inserted-bg);color:var(--color-prettylights-syntax-markup-inserted-text)}svg>foreignObject>section .pl-mc{background-color:var(--color-prettylights-syntax-markup-changed-bg);color:var(--color-prettylights-syntax-markup-changed-text)}svg>foreignObject>section .pl-mi2{background-color:var(--color-prettylights-syntax-markup-ignored-bg);color:var(--color-prettylights-syntax-markup-ignored-text)}svg>foreignObject>section .pl-mdr{color:var(--color-prettylights-syntax-meta-diff-range);font-weight:700}svg>foreignObject>section .pl-ba{color:var(--color-prettylights-syntax-brackethighlighter-angle)}svg>foreignObject>section .pl-sg{color:var(--color-prettylights-syntax-sublimelinter-gutter-mark)}svg>foreignObject>section .pl-corl{color:var(--color-prettylights-syntax-constant-other-reference-link);text-decoration:underline}svg>foreignObject>section g-emoji{display:inline-block;font-family:Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:1em;font-style:normal!important;font-weight:var(--base-text-weight-normal,400);line-height:1;min-width:1ch;vertical-align:-.075em}svg>foreignObject>section g-emoji img{height:1em;width:1em}svg>foreignObject>section .task-list-item{list-style-type:none}svg>foreignObject>section .task-list-item label{font-weight:var(--base-text-weight-normal,400)}svg>foreignObject>section .task-list-item.enabled label{cursor:pointer}svg>foreignObject>section .task-list-item+.task-list-item{margin-top:4px}svg>foreignObject>section .task-list-item .handle{display:none}svg>foreignObject>section .task-list-item-checkbox{margin:0 .2em .25em -1.4em;vertical-align:middle}svg>foreignObject>section .contains-task-list:dir(rtl) .task-list-item-checkbox{margin:0 -1.6em .25em .2em}svg>foreignObject>section .contains-task-list{position:relative}svg>foreignObject>section .contains-task-list:focus-within .task-list-item-convert-container,svg>foreignObject>section .contains-task-list:hover .task-list-item-convert-container{clip:auto;display:block;height:24px;overflow:visible;width:auto}svg>foreignObject>section ::-webkit-calendar-picker-indicator{filter:invert(50%)}svg>foreignObject>section :is(h1,marp-h1){color:var(--h1-color);font-size:1.6em}svg>foreignObject>section :is(h1,marp-h1),svg>foreignObject>section :is(h2,marp-h2){border-bottom:none}svg>foreignObject>section :is(h2,marp-h2){font-size:1.3em}svg>foreignObject>section :is(h3,marp-h3){font-size:1.1em}svg>foreignObject>section :is(h4,marp-h4){font-size:1.05em}svg>foreignObject>section :is(h5,marp-h5){font-size:1em}svg>foreignObject>section :is(h6,marp-h6){font-size:.9em}svg>foreignObject>section :is(h1,marp-h1) strong,svg>foreignObject>section :is(h2,marp-h2) strong,svg>foreignObject>section :is(h3,marp-h3) strong,svg>foreignObject>section :is(h4,marp-h4) strong,svg>foreignObject>section :is(h5,marp-h5) strong,svg>foreignObject>section :is(h6,marp-h6) strong{color:var(--heading-strong-color);font-weight:inherit}svg>foreignObject>section :is(h1,marp-h1)::part(auto-scaling),svg>foreignObject>section :is(h2,marp-h2)::part(auto-scaling),svg>foreignObject>section :is(h3,marp-h3)::part(auto-scaling),svg>foreignObject>section :is(h4,marp-h4)::part(auto-scaling),svg>foreignObject>section :is(h5,marp-h5)::part(auto-scaling),svg>foreignObject>section :is(h6,marp-h6)::part(auto-scaling){max-height:563px}svg>foreignObject>section hr{height:0;padding-top:.25em}svg>foreignObject>section :is(pre,marp-pre){border:1px solid var(--color-border-default);line-height:1.15;overflow:visible}svg>foreignObject>section :is(pre,marp-pre)::part(auto-scaling){max-height:529px}svg>foreignObject>section :is(pre,marp-pre) :where(.hljs){color:var(--color-prettylights-syntax-storage-modifier-import)}svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-doctag),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-keyword),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-meta .hljs-keyword),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-template-tag),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-template-variable),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-type),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-variable.language_){color:var(--color-prettylights-syntax-keyword)}svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-title),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-title.class_),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-title.class_.inherited__),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-title.function_){color:var(--color-prettylights-syntax-entity)}svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-attr),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-attribute),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-literal),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-meta),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-number),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-operator),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-selector-attr),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-selector-class),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-selector-id),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-variable){color:var(--color-prettylights-syntax-constant)}svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-meta .hljs-string),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-regexp),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-string){color:var(--color-prettylights-syntax-string)}svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-built_in),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-symbol){color:var(--color-prettylights-syntax-variable)}svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-code),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-comment),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-formula){color:var(--color-prettylights-syntax-comment)}svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-name),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-quote),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-selector-pseudo),svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-selector-tag){color:var(--color-prettylights-syntax-entity-tag)}svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-subst){color:var(--color-prettylights-syntax-storage-modifier-import)}svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-section){color:var(--color-prettylights-syntax-markup-heading);font-weight:700}svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-bullet){color:var(--color-prettylights-syntax-markup-list)}svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-emphasis){color:var(--color-prettylights-syntax-markup-italic);font-style:italic}svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-strong){color:var(--color-prettylights-syntax-markup-bold);font-weight:700}svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-addition){background-color:var(--color-prettylights-syntax-markup-inserted-bg);color:var(--color-prettylights-syntax-markup-inserted-text)}svg>foreignObject>section :is(pre,marp-pre) :where(.hljs-deletion){background-color:var(--color-prettylights-syntax-markup-deleted-bg);color:var(--color-prettylights-syntax-markup-deleted-text)}svg>foreignObject>section footer,svg>foreignObject>section header{color:var(--header-footer-color);font-size:18px;left:30px;margin:0;position:absolute}svg>foreignObject>section header{top:21px}svg>foreignObject>section footer{bottom:21px}svg>foreignObject>section{--h1-color:#246;--header-footer-color:hsla(0,0%,40%,.75);--heading-strong-color:#48c;--paginate-color:#777;align-items:stretch;display:flex;flex-flow:column nowrap;font-size:29px;height:720px;justify-content:center;padding:78.5px;width:1280px}svg>foreignObject>section{--marpit-root-font-size:29px}svg>foreignObject>section:where(.invert){--h1-color:#cee7ff;--header-footer-color:hsla(0,0%,60%,.75);--heading-strong-color:#7bf;--paginate-color:#999}svg>foreignObject>section>:last-child,svg>foreignObject>section[data-footer]>:nth-last-child(2){margin-bottom:0}svg>foreignObject>section>:first-child,svg>foreignObject>section>header:first-child+*{margin-top:0}svg>foreignObject>section:after{bottom:21px;color:var(--paginate-color);font-size:24px;padding:0;position:absolute;right:30px}svg>foreignObject>section:after{--marpit-root-font-size:24px}svg>foreignObject>section[data-color] :is(h1,marp-h1),svg>foreignObject>section[data-color] :is(h2,marp-h2),svg>foreignObject>section[data-color] :is(h3,marp-h3),svg>foreignObject>section[data-color] :is(h4,marp-h4),svg>foreignObject>section[data-color] :is(h5,marp-h5),svg>foreignObject>section[data-color] :is(h6,marp-h6){color:currentcolor}svg>foreignObject>:where(section){container-type:size}svg>foreignObject>section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}
+
+/* @theme beamer */svg>foreignObject>:where(section):not([root]){font-family:"Kai";--font-family-main:"Times New Roman","SimSun";--font-family-bq:"Times New Roman","仿宋";--font-family-title:"Microsoft YaHei";--beamer-main:#1f38c5;--beamer-secondary:#141414;--font-size-1:55px;--foot-size-subtitle:42px;--font-size-2-3:38px;--font-size-4-5:30px;--font-size-main:25px;--font-size-footer:22px;--font-size-page:12px;--font-size-code:22px;--color-title:#ffffff;--color-footer:#8c8c8c;--color-navbar-font:rgb(108,95,91);--color-few:#91a814;--color-quote:rgba(254,176,98,0.1);--color-main:#041d22;--color-coverbg:#1f38c5;--color-much:#1482a8;--color-trans:#72bdcb;--color-navbar-bg:#d0e9ee;--color-code-bg:#e8f4f6}svg>foreignObject>section :is(h1,marp-h1),svg>foreignObject>section :is(h2,marp-h2),svg>foreignObject>section :is(h3,marp-h3),svg>foreignObject>section :is(h4,marp-h4),svg>foreignObject>section :is(h5,marp-h5){font-family:var(--font-family-title)}
+
+
+
+/* 添加底beamer框  */svg>foreignObject>section:not(.cover):not(.trans){background-color:#ffffff;
+  /* bottom two-coloured bar in base64 svg */background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gQ3JlYXRlZCB3aXRoIElua3NjYXBlIChodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy8pIC0tPgoKPHN2ZwogICB3aWR0aD0iMjUwbW0iCiAgIGhlaWdodD0iNS4zNTQ1NjcxbW0iCiAgIHZpZXdCb3g9IjAgMCAyNTAgNS4zNTQ1NjcxIgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc1IgogICBpbmtzY2FwZTp2ZXJzaW9uPSIxLjEuMSAoM2JmNWFlMGQyNSwgMjAyMS0wOS0yMCkiCiAgIHNvZGlwb2RpOmRvY25hbWU9ImJhci5zdmciCiAgIHhtbG5zOmlua3NjYXBlPSJodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy9uYW1lc3BhY2VzL2lua3NjYXBlIgogICB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHNvZGlwb2RpOm5hbWVkdmlldwogICAgIGlkPSJuYW1lZHZpZXc3IgogICAgIHBhZ2Vjb2xvcj0iI2ZmZmZmZiIKICAgICBib3JkZXJjb2xvcj0iIzY2NjY2NiIKICAgICBib3JkZXJvcGFjaXR5PSIxLjAiCiAgICAgaW5rc2NhcGU6cGFnZXNoYWRvdz0iMiIKICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMC4wIgogICAgIGlua3NjYXBlOnBhZ2VjaGVja2VyYm9hcmQ9IjAiCiAgICAgaW5rc2NhcGU6ZG9jdW1lbnQtdW5pdHM9Im1tIgogICAgIHNob3dncmlkPSJmYWxzZSIKICAgICBzaG93Z3VpZGVzPSJmYWxzZSIKICAgICBmaXQtbWFyZ2luLXRvcD0iMCIKICAgICBmaXQtbWFyZ2luLWxlZnQ9IjAiCiAgICAgZml0LW1hcmdpbi1yaWdodD0iMCIKICAgICBmaXQtbWFyZ2luLWJvdHRvbT0iMCIKICAgICBpbmtzY2FwZTp6b29tPSIwLjc0MTE4OTY1IgogICAgIGlua3NjYXBlOmN4PSI1NjQuNjMyODIiCiAgICAgaW5rc2NhcGU6Y3k9IjkyLjQxODk5MiIKICAgICBpbmtzY2FwZTp3aW5kb3ctd2lkdGg9IjE2ODQiCiAgICAgaW5rc2NhcGU6d2luZG93LWhlaWdodD0iOTQ3IgogICAgIGlua3NjYXBlOndpbmRvdy14PSIxMTQiCiAgICAgaW5rc2NhcGU6d2luZG93LXk9IjMwIgogICAgIGlua3NjYXBlOndpbmRvdy1tYXhpbWl6ZWQ9IjAiCiAgICAgaW5rc2NhcGU6Y3VycmVudC1sYXllcj0ibGF5ZXIxIgogICAgIHVuaXRzPSJtbSIKICAgICB3aWR0aD0iMjY0bW0iIC8+CiAgPGRlZnMKICAgICBpZD0iZGVmczIiIC8+CiAgPGcKICAgICBpbmtzY2FwZTpsYWJlbD0iVnJzdHZhIDEiCiAgICAgaW5rc2NhcGU6Z3JvdXBtb2RlPSJsYXllciIKICAgICBpZD0ibGF5ZXIxIgogICAgIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMC4zNDczNTUsLTkxLjAyNzY0OSkiPgogICAgPHJlY3QKICAgICAgIHN0eWxlPSJmaWxsOiMxNDE0MTQ7ZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOmV2ZW5vZGQ7c3Ryb2tlLXdpZHRoOjAuNDIyOTk5IgogICAgICAgaWQ9InJlY3QzMSIKICAgICAgIHdpZHRoPSIxMjUiCiAgICAgICBoZWlnaHQ9IjUuMzU0NTY3MSIKICAgICAgIHg9IjIwLjM0NzM1NSIKICAgICAgIHk9IjkxLjAyNzY0OSIgLz4KICAgIDxwYXRoCiAgICAgICBzdHlsZT0iZmlsbDojMWYzOGM1O2ZpbGwtb3BhY2l0eToxO3N0cm9rZS13aWR0aDowLjU3Mjc5OSIKICAgICAgIGQ9Im0gMTQ1LjM0NzM1LDkzLjcwNDkzMyB2IC0yLjY3NzI4NCBoIDYyLjUgNjIuNSB2IDIuNjc3Mjg0IDIuNjc3MjgyIGggLTYyLjUgLTYyLjUgeiIKICAgICAgIGlkPSJwYXRoMzk0IiAvPgogIDwvZz4KPC9zdmc+Cg==);background-repeat:no-repeat;background-position:center bottom;background-size:150% 1em;padding:2em}
+
+/* 选择 `<section>` 标签下的第一级 `<h1>` 标题 */
+/* <!-- _class: title --> */svg>foreignObject>section.title>:is(h1,marp-h1){font-family:"CMU Bright","Segoe UI Semibold";color:#ffffff;background-color:var(--beamer-main);border-radius:25px;text-align:center;top:25%;left:0;right:0;margin-left:auto;margin-right:auto;width:80%;padding-bottom:0.2em;height:auto}svg>foreignObject>section.cover :is(h1,marp-h1){font-family:"CMU Bright","Segoe UI Semibold";color:#ffffff;background-color:var(--beamer-main);border-radius:25px;text-align:center;top:25%;left:0;right:0;margin-left:auto;margin-right:auto;width:70%;padding-top:0.2em;padding-bottom:0.2em;height:auto}
+
+/* 副标题 */svg>foreignObject>section :is(h6,marp-h6){font-family:var(--font-family-title);font-size:var(--foot-size-subtitle);text-align:center;color:black} 
+
+/* 左下角  */svg>foreignObject>section header{font-size:0.6em;
+  /* this text-align is important */text-align:right;
+  /* I don't like this absolute positioning, but it works */position:absolute;top:96.2%;width:100%;right:0;left:-51%;color:white}
+
+/* 顶部蓝色标题栏  */
+/* only apply to the first occurrence of h2 */svg>foreignObject>section :is(h2,marp-h2):not(.trans):first-of-type{font-family:"CMU Bright","Segoe UI Semibold";font-size:1.5em;color:#ffffff;background-color:var(--beamer-main);border-top:0.3em solid var(--beamer-main);border-bottom:0.3em solid var(--beamer-main);padding:0;position:absolute;top:0;right:0;width:100%;height:1.5em;text-indent:0.5em}
+
+/* 导航栏  */svg>foreignObject>section.navbar header{background-color:var(--color-navbar-bg);width:100%;height:5%;padding:6px 0px 3px 0px;left:0px;top:0px;display:flex;justify-content:space-between;color:var(--color-navbar-font);white-space:pre}svg>foreignObject>section.navbar header>em,svg>foreignObject>section.navbar header>em>strong,svg>foreignObject>section.navbar header>strong{font-style:normal;font-size:calc(var(--marpit-root-font-size, 1rem) * 0.9);font-weight:normal;color:var(--color-navbar-font)}svg>foreignObject>section.navbar header>strong{border:1px solid white;border-radius:12px;padding:0px 15px 5px 15px;background-color:white}svg>foreignObject>section.navbar header:after,svg>foreignObject>section.navbar header:before{content:""}svg>foreignObject>section.navbar header>em>strong{display:block;width:400px;text-align:left;margin-left:-20px}
+
+
+/* 过渡页  */svg>foreignObject>section.trans{background-color:var(--beamer-main)}svg>foreignObject>section.trans>:is(h1,marp-h1){text-align:center;color:var(--color-title);font-size:calc(var(--marpit-root-font-size, 1rem) * 2)}svg>foreignObject>section.trans>header{color:var(--beamer-main)}svg>foreignObject>section.trans>footer{color:var(--beamer-main)}svg>foreignObject>section p{
+  /* text-indent: 2em; */font-family:var(--font-family-main)}svg>foreignObject>section blockquote>p{font-family:var(--font-family-bq)}
+
+/* as footer */svg>foreignObject>section.blockquote>p{border-top:0.1em dashed #555;font-size:60%;font-family:"Times New Roman","仿宋";margin-top:auto}svg>foreignObject>section code{padding:2px;border-radius:1px;background-color:var(--color-code-bg);font-family:"Maple Mono Normal";font-size:calc(var(--marpit-root-font-size, 1rem) * 0.8);letter-spacing:-1px}svg>foreignObject>section strong{font-weight:bolder}svg>foreignObject>section ol{font-size:0.95em}svg>foreignObject>section li{font-size:0.95em}svg>foreignObject>section ul{line-height:calc(var(--marpit-root-font-size, 1rem) * 1.4);padding-left:35px}svg>foreignObject>section ul.a{list-style-type:disc}svg>foreignObject>section ul.b{list-style-type:circle}svg>foreignObject>section ul.c{list-style-type:square}svg>foreignObject>section ul li::marker{color:var(--color-much)}svg>foreignObject>section em{color:red; /* 或者使用十六进制颜色代码 #FF0000 */font-style:normal}svg>foreignObject>section.trans.a{font-size:calc(var(--marpit-root-font-size, 1rem) * 0.9);font-family:Lato;text-align:center;text-indent:10em;padding:calc(var(--marpit-root-font-size, 1rem) * 10);color:white}svg>foreignObject>section.trans.a{--marpit-root-font-size:calc(var(--marpit-root-font-size, 1rem) * 0.9)}svg>foreignObject>section a:hover{color:red;text-decoration:underline}svg>foreignObject>section a:before{font-size:0.6em;padding-left:0.5%;
+  /* content: "\f08e"; f148 f0c1 f08e f14c f0c6 */color:white}svg>foreignObject>section.english{font-family:Lato;text-align:justify;text-indent:2em}
+
+/* 目录  */svg>foreignObject>section.toc{width:100%;text-align:center}svg>foreignObject>section.toc_a ul{list-style-type:none;padding:30px;margin:30px;position:relative;border-radius:0px 0px 20px 20px;border-top:8px solid var(--color-navbar-font);background-color:white;box-shadow:3px 3px 25px rgb(215,224,235)}svg>foreignObject>section.toc_a ul li{counter-increment:toc_a}svg>foreignObject>section.toc_a ul li:before{font-family:var(--font-family-title);color:white;content:counter(toc_a);margin-right:20px;margin-bottom:10px;width:35px;height:35px;display:inline-flex;position:relative;align-items:center;justify-content:center;background-color:var(--color-much);border-radius:50%}svg>foreignObject>section.toc_a ul li:hover:before{-moz-transition:all 0.5s ease-out;transition:all 0.3s ease-out;-moz-transform:rotate(360deg);-webkit-transform:rotate(360deg);-o-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}svg>foreignObject>section.toc_a header{height:100%;width:150%;font-family:'Fira Code';font-weight:bolder;font-size:500%;left:-8px;display:flex;line-height:162px;-webkit-text-fill-color:transparent}
+
+
+/* 脚注  */svg>foreignObject>section footer{font-size:0.6em;position:absolute;
+  /* this text-align is important */text-align:left;top:96.2%;width:100%;right:0;left:50.8%;color:white}
+
+/* 让所有图片宽度不超过父元素的 95%，并添加圆角。
+*   根据图片 `alt` 属性中是否包含 `#l`、`#r` 或 `
+*   #c` 来控制图片的浮动方向（左、右）或居中布局。   */svg>foreignObject>section img{max-width:95% ;border-radius:8px;margin:auto}svg>foreignObject>section img[alt*='#l']{float:left}svg>foreignObject>section img[alt*='#r']{float:right}svg>foreignObject>section img[alt*='#c']{display:block;margin:auto}
+
+
+/* 给代码加一个半透明的灰色背景  */svg>foreignObject>section code{background-color:rgba(100,100,100,0.2)}
+
+/* 调整页码在文档中的显示方式 */
+/* section::after 在 HTML 的 `<section>` 元素的内容之后插入一些内容  */svg>foreignObject>section:after{font-size:0.6em;
+  /* https://github.com/yhatt/marp/issues/263 */content:attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);position:absolute;text-align:right;top:96.2%;width:100%;right:0;left:-1em;color:white}svg>foreignObject>section:after{--marpit-root-font-size:0.6em}
+
+/* 行内公式的字体大小设置可能导致公式相对于周围文
+ * 本显得过大，并提供了一段 CSS 代码来尝试调整公式的字体大小 */svg>foreignObject>section .katex{font:normal 1.05em KaTeX_Main,'Times New Roman',serif}
+
+
+/* 分双栏  */svg>foreignObject>section.cols-2{overflow:visible;display:grid;gap:calc(var(--marpit-root-font-size, 1rem) * 1.5);grid-template-columns:50% 50%;grid-template-rows:10% 90%;grid-template-areas:"slideheading slideheading" "leftpanel    rightpanel"}svg>foreignObject>section.cols-2 :is(h2,marp-h2),svg>foreignObject>section.cols-2 :is(h3,marp-h3){grid-area:slideheading;font-size:var(--font-size-2-3)}
+
+/* 左栏  */svg>foreignObject>section.cols-2 .ldiv{grid-area:leftpanel;margin-top:-5%}
+/* 右栏 */svg>foreignObject>section.cols-2 .rdiv{grid-area:rightpanel;margin-top:-5%}
+
+/* 左图  */svg>foreignObject>section.cols-2 .limg{grid-area:leftpanel;margin-top:-5%;display:flex;align-items:center;justify-content:center}
+/* 右图  */svg>foreignObject>section.cols-2 .rimg{grid-area:rightpanel;margin-top:-5%;display:flex;align-items:center;justify-content:center}
+
+/* 三栏  */svg>foreignObject>section.cols-3{overflow:visible;display:grid;gap:calc(var(--marpit-root-font-size, 1rem) * 1);grid-template-columns:1fr 1fr 1fr;grid-template-rows:10% 90%;grid-template-areas:"slideheading slideheading slideheading" "leftpanel    middlepanel  rightpanel"}svg>foreignObject>section.cols-3 :is(h2,marp-h2),svg>foreignObject>section.cols-3 :is(h3,marp-h3){grid-area:slideheading;font-size:var(--font-size-2-3)}svg>foreignObject>section.cols-3 .ldiv{grid-area:leftpanel;margin-top:-5%}svg>foreignObject>section.cols-3 .mdiv{grid-area:middlepanel;margin-top:-5%}svg>foreignObject>section.cols-3 .rdiv{grid-area:rightpanel;margin-top:-5%}svg>foreignObject>section.cols-3 .limg{grid-area:leftpanel;margin-top:-5%;display:flex;align-items:center;justify-content:center}svg>foreignObject>section.cols-3 .mimg{grid-area:middlepanel;margin-top:-5%;display:flex;align-items:center;justify-content:center}svg>foreignObject>section.cols-3 .rimg{grid-area:rightpanel;margin-top:-5%;display:flex;align-items:center;justify-content:center}
+
+
+/* 分栏比例：55, 64,73,46,37  */svg>foreignObject>section.cols-2-73{overflow:visible;display:grid;gap:calc(var(--marpit-root-font-size, 1rem) * 1);grid-template-columns:70% 30%;grid-template-rows:10% 90%;grid-template-areas:"slideheading slideheading" "leftpanel    rightpanel"}svg>foreignObject>section.cols-2-73 :is(h2,marp-h2),svg>foreignObject>section.cols-2-73 :is(h3,marp-h3){grid-area:slideheading;font-size:var(--font-size-2-3)}svg>foreignObject>section.cols-2-73 .ldiv{grid-area:leftpanel;margin-top:-2%}svg>foreignObject>section.cols-2-73 .rdiv{grid-area:rightpanel;margin-top:-2%}svg>foreignObject>section.cols-2-73 .limg{grid-area:leftpanel;margin-top:-2%;display:flex;align-items:center;justify-content:center}svg>foreignObject>section.cols-2-73 .rimg{grid-area:rightpanel;margin-top:-2%;display:flex;align-items:center;justify-content:center}svg>foreignObject>section.cols-2-64{overflow:visible;display:grid;gap:calc(var(--marpit-root-font-size, 1rem) * 1);grid-template-columns:60% 40%;grid-template-rows:10% 90%;grid-template-areas:"slideheading slideheading" "leftpanel    rightpanel"}svg>foreignObject>section.cols-2-64 :is(h2,marp-h2),svg>foreignObject>section.cols-2-64 :is(h3,marp-h3){grid-area:slideheading;font-size:var(--font-size-2-3)}svg>foreignObject>section.cols-2-64 .ldiv{grid-area:leftpanel;margin-top:-2%}svg>foreignObject>section.cols-2-64 .rdiv{grid-area:rightpanel;margin-top:-2%}svg>foreignObject>section.cols-2-64 .limg{grid-area:leftpanel;margin-top:-2%;display:flex;align-items:center;justify-content:center}svg>foreignObject>section.cols-2-64 .rimg{grid-area:rightpanel;margin-top:-2%;display:flex;align-items:center;justify-content:center}svg>foreignObject>section.cols-2-37{overflow:visible;display:grid;gap:calc(var(--marpit-root-font-size, 1rem) * 1);grid-template-columns:30% 70%;grid-template-rows:10% 90%;grid-template-areas:"slideheading slideheading" "leftpanel    rightpanel"}svg>foreignObject>section.cols-2-37 :is(h2,marp-h2),svg>foreignObject>section.cols-2-37 :is(h3,marp-h3){grid-area:slideheading;font-size:var(--font-size-2-3)}svg>foreignObject>section.cols-2-37 .ldiv{grid-area:leftpanel;margin-top:-2%}svg>foreignObject>section.cols-2-37 .rdiv{grid-area:rightpanel;margin-top:-2%}svg>foreignObject>section.cols-2-37 .limg{grid-area:leftpanel;margin-top:-2%;display:flex;align-items:center;justify-content:center}svg>foreignObject>section.cols-2-37 .rimg{grid-area:rightpanel;margin-top:-2%;display:flex;align-items:center;justify-content:center}svg>foreignObject>section.cols-2-46{overflow:visible;display:grid;gap:calc(var(--marpit-root-font-size, 1rem) * 1);grid-template-columns:40% 60%;grid-template-rows:10% 90%;grid-template-areas:"slideheading slideheading" "leftpanel    rightpanel"}svg>foreignObject>section.cols-2-46 :is(h2,marp-h2),svg>foreignObject>section.cols-2-46 :is(h3,marp-h3){grid-area:slideheading;font-size:var(--font-size-2-3)}svg>foreignObject>section.cols-2-46 .ldiv{grid-area:leftpanel;margin-top:-2%}svg>foreignObject>section.cols-2-46 .rdiv{grid-area:rightpanel;margin-top:-2%}svg>foreignObject>section.cols-2-46 .limg{grid-area:leftpanel;margin-top:-2%;display:flex;align-items:center;justify-content:center}svg>foreignObject>section.cols-2-46 .rimg{grid-area:rightpanel;margin-top:-2%;display:flex;align-items:center;justify-content:center}
+
+
+/* 引用框设置  */svg>foreignObject>section.bq-black blockquote,svg>foreignObject>section.bq-blue blockquote,svg>foreignObject>section.bq-green blockquote,svg>foreignObject>section.bq-purple blockquote,svg>foreignObject>section.bq-red blockquote{padding:1%;letter-spacing:0px;border-left:none;background-color:white}svg>foreignObject>section.bq-purple blockquote p>strong{color:var(--color-main);font-size:calc(var(--marpit-root-font-size, 1rem) * 0.9)}svg>foreignObject>section.bq-black blockquote>p:before,svg>foreignObject>section.bq-blue blockquote>p:before,svg>foreignObject>section.bq-green blockquote>p:before,svg>foreignObject>section.bq-purple blockquote>p:before,svg>foreignObject>section.bq-red blockquote>p:before{padding-right:0px;content:"";color:white}svg>foreignObject>section.bq-black blockquote>p:first-child,svg>foreignObject>section.bq-blue blockquote>p:first-child,svg>foreignObject>section.bq-green blockquote>p:first-child,svg>foreignObject>section.bq-purple blockquote>p:first-child,svg>foreignObject>section.bq-red blockquote>p:first-child{margin-bottom:-1px;line-height:calc(var(--marpit-root-font-size, 1rem) * 2);padding:0.5% 0.5% 0.5% 1.5%;color:white;font-size:calc(var(--marpit-root-font-size, 1rem) * 1.03)}svg>foreignObject>section.bq-black blockquote>p:not(:first-child),svg>foreignObject>section.bq-blue blockquote>p:not(:first-child),svg>foreignObject>section.bq-green blockquote>p:not(:first-child),svg>foreignObject>section.bq-purple blockquote>p:not(:first-child),svg>foreignObject>section.bq-red blockquote>p:not(:first-child){padding:1% 2%;background-color:rgb(228,234,246)}svg>foreignObject>section.bq-blue blockquote>p:first-child{background-color:rgb(129,161,193)}svg>foreignObject>section.bq-red blockquote>p:first-child{background-color:rgb(191,97,106)}svg>foreignObject>section.bq-green blockquote>p:first-child{background-color:rgb(172,206,141)}svg>foreignObject>section.bq-purple blockquote>p:first-child{background-color:rgb(180,142,173)}svg>foreignObject>section.bq-black blockquote>p:first-child{background-color:rgb(67,76,94)}svg>foreignObject>section.bq-blue blockquote>p:first-child:before{content:"\f518";padding-right:2%;font-family:"FontAwesome"}svg>foreignObject>section.bq-red blockquote>p:first-child:before{content:"\f0eb";padding-right:2%;font-family:"FontAwesome"}svg>foreignObject>section.bq-green blockquote>p:first-child:before{content:"\e0bb";padding-right:2%;font-family:"FontAwesome"}svg>foreignObject>section.bq-purple blockquote>p:first-child:before{content:"\f7e4";padding-right:2%;font-family:"FontAwesome"}svg>foreignObject>section.bq-black blockquote>p:first-child:before{content:"\f5ad";padding-right:2%;font-family:"FontAwesome"}svg>foreignObject>section.theend{background:linear-gradient(to bottom,white 20%,var(--color-coverbg) 20% 60%,white 55%);padding:0;display:grid;grid-template-rows:80% 20%;grid-template-columns:auto;grid-template-areas:"heading" "icons"}
+
+/* 尾页设置  */svg>foreignObject>section.theend :is(h6,marp-h6){height:80px;margin-bottom:10px;text-align:center;vertical-align:middle;font-family:var(--font-family-title);font-size:var(--font-size-1);color:var(--main-color);display:grid;padding:0;height:100%;width:100%;align-content:center;justify-content:center}svg>foreignObject>section.theend :is(h6,marp-h6){grid-area:heading}svg>foreignObject>section.theend .icons{grid-area:icons}svg>foreignObject>section.theend div>ul{font-family:var(--font-family-main);width:100%;display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:5em;align-content:center;list-style:none}svg>foreignObject>section.theend ul>li>ul>li{margin-left:-100px}svg>foreignObject>section.theend div>ul>li>ul>li{list-style:none}svg>foreignObject>section .fa-envelope,svg>foreignObject>section .fa-house,svg>foreignObject>section .fa-phone-volume,svg>foreignObject>section .fa-weixin{border:2px solid;padding:10px;border-radius:50%;font-size:calc(var(--marpit-root-font-size, 1rem) * 1.2)}svg>foreignObject>section section.fa-envelope,svg>foreignObject>section section.fa-house,svg>foreignObject>section section.fa-phone-volume,svg>foreignObject>section section.fa-weixin{--marpit-root-font-size:calc(var(--marpit-root-font-size, 1rem) * 1.2)}svg>foreignObject>section.theend a{font-size:var(--font-size-main)}svg>foreignObject>section.theend a:after,svg>foreignObject>section.theend:after{position:relative;
+  /* content: ""; */border:none;color:white}svg>foreignObject>section.caption .caption{padding-top:20px;text-align:center;font-size:smaller;color:var(--color-footer)}svg>foreignObject>section.caption>svg>foreignObject>section section.caption{--marpit-root-font-size:smaller}
+
+/* 表格  */svg>foreignObject>section table{border-collapse:collapse;text-align:center;word-break:initial;font-size:calc(var(--marpit-root-font-size, 1rem) * 0.8);margin:0 auto}svg>foreignObject>section table code{font-size:calc(var(--marpit-root-font-size, 1rem) * 0.7)}svg>foreignObject>section th,svg>foreignObject>section thead{height:40px;border-top:3px solid var(--color-main);font-size:105%;padding:6px}svg>foreignObject>section th,svg>foreignObject>section thead:first-child{border-bottom:3px solid var(--color-main)}svg>foreignObject>section table tr:nth-child(2n){background-color:white}svg>foreignObject>section tbody:last-child{border-bottom:3px solid var(--color-main)}svg>foreignObject>section table>tbody>tr>td,svg>foreignObject>section table>tbody>tr>th,svg>foreignObject>section table>tfoot>tr>td,svg>foreignObject>section table>tfoot>tr>th,svg>foreignObject>section table>thead>tr>td,svg>foreignObject>section table>thead>tr>th{border:0px solid white}
+
+
+/* 控制代码高亮显示库（例如 highlight.js）的样式  */svg>foreignObject>section .hljs{display:block;overflow-x:auto;padding:0.5em;font-size:small}svg>foreignObject>section section.hljs{--marpit-root-font-size:small}svg>foreignObject>section .hljs-comment{color:#28a828}svg>foreignObject>section .hljs-string{color:#fd8f3f}svg>foreignObject>section .hljs-number{color:rgb(158,158,62)}svg>foreignObject>section .hljs-keyword{color:#1111e2}svg>foreignObject>section .hljs-symbol{color:#ac1212}svg>foreignObject>section .hljs-variable{color:#fc5fa3}svg>foreignObject>section .hljs-built_in{color:#960ab9}svg>foreignObject>section .hljs-emphasis{font-style:italic}svg>foreignObject>section .hljs-meta{color:#2c2cff}svg>foreignObject>section .hljs-literal{color:#2c2cff}svg>foreignObject>section .hljs-name{color:#2c2cff}svg>foreignObject>section .in-prompt{color:#99bb88}svg>foreignObject>section .in-prompt-number{font-weight:bold}svg>foreignObject>section .out-prompt{color:#ff9090}svg>foreignObject>section .out-prompt-number{font-weight:bold}svg>foreignObject>section .inverted{background-color:white;color:#232629}svg>foreignObject>section.fixedtitleA{justify-content:start}svg>foreignObject>section.fixedtitleB{justify-content:start;display:grid;gap:calc(var(--marpit-root-font-size, 1rem) * 1.5);grid-template-rows:10% 90%;grid-template-areas:"slideheading" "content"}svg>foreignObject>section.fixedtitleB>:is(h2,marp-h2),svg>foreignObject>section.fixedtitleB>:is(h3,marp-h3),svg>foreignObject>section.fixedtitleB>:is(h4,marp-h4),svg>foreignObject>section.fixedtitleB>:is(h5,marp-h5){grid-area:slideheading;position:absolute;padding:10px;background-color:var(--color-much);color:white;border-radius:8px;font-size:calc(var(--marpit-root-font-size, 1rem) * 1.25)}svg>foreignObject>section.fixedtitleB .div{grid-area:content} 
+
+/* 脚注  */svg>foreignObject>section.footnote{display:grid;gap:0.7em;grid-template-rows:1fr auto;grid-template-areas:"content" "footnote"}svg>foreignObject>section.footnote .tdiv{grid-area:"content";justify-content:start}svg>foreignObject>section.footnote .tdiv>:is(h2,marp-h2),svg>foreignObject>section.footnote .tdiv>:is(h3,marp-h3),svg>foreignObject>section.footnote .tdiv>:is(h4,marp-h4),svg>foreignObject>section.footnote .tdiv>:is(h5,marp-h5){margin-bottom:calc(var(--marpit-root-font-size, 1rem) * 1);margin-top:-calc(var(--marpit-root-font-size,1rem) * 1)}svg>foreignObject>section.footnote .bdiv{grid-area:"footnote";font-size:85%;bottom:5%}svg>foreignObject>section.footnote>svg>foreignObject>section section.bdiv{--marpit-root-font-size:85%}svg>foreignObject>section.footnote .bdiv:before{border-top:1.8px dashed var(--color-coverbg);content:"";display:block;margin-bottom:1em}
+
+/* 字号  */svg>foreignObject>section.tinytext>blockquote,svg>foreignObject>section.tinytext>ol,svg>foreignObject>section.tinytext>p,svg>foreignObject>section.tinytext>table,svg>foreignObject>section.tinytext>ul{font-size:80%}svg>foreignObject>section.tinytext code{font-size:90%}svg>foreignObject>section.tinytext strong{font-size:100%}svg>foreignObject>section.tinytext em{font-size:90%}svg>foreignObject>section.tinytext :is(pre,marp-pre){font-size:70%}svg>foreignObject>section.smalltext>blockquote,svg>foreignObject>section.smalltext>ol,svg>foreignObject>section.smalltext>p,svg>foreignObject>section.smalltext>table,svg>foreignObject>section.smalltext>ul{font-size:90%}svg>foreignObject>section.smalltext code{font-size:90%}svg>foreignObject>section.smalltext strong{font-size:100%}svg>foreignObject>section.smalltext em{font-size:90%}svg>foreignObject>section.smalltext :is(pre,marp-pre){font-size:80%}svg>foreignObject>section.largetext>blockquote,svg>foreignObject>section.largetext>ol,svg>foreignObject>section.largetext>p,svg>foreignObject>section.largetext>table,svg>foreignObject>section.largetext>ul{font-size:115%}svg>foreignObject>section.largetext strong{font-size:100%}svg>foreignObject>section.largetext code{font-size:90%}svg>foreignObject>section.largetext em{font-size:90%}svg>foreignObject>section.largetext :is(pre,marp-pre){font-size:105%}svg>foreignObject>section.hugetext>blockquote,svg>foreignObject>section.hugetext>ol,svg>foreignObject>section.hugetext>p,svg>foreignObject>section.hugetext>table,svg>foreignObject>section.hugetext>ul{font-size:130%}svg>foreignObject>section.hugetext strong{font-size:100%}svg>foreignObject>section.hugetext code{font-size:90%}svg>foreignObject>section.hugetext em{font-size:90%}svg>foreignObject>section.hugetext :is(pre,marp-pre){font-size:120%}svg>foreignObject>section[data-marpit-advanced-background=background]{columns:initial!important;display:block!important;padding:0!important}svg>foreignObject>section[data-marpit-advanced-background=background]:after,svg>foreignObject>section[data-marpit-advanced-background=background]:before,svg>foreignObject>section[data-marpit-advanced-background=content]:after,svg>foreignObject>section[data-marpit-advanced-background=content]:before{display:none!important}svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction=vertical]{flex-direction:column}svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split]>div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split,50%)}svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split=right]>div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]>figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]>figure>figcaption{position:absolute;border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;white-space:nowrap;width:1px}svg>foreignObject>section[data-marpit-advanced-background=content],svg>foreignObject>section[data-marpit-advanced-background=pseudo]{background:transparent!important}svg>foreignObject>section[data-marpit-advanced-background=pseudo],svg[data-marpit-svg]>foreignObject[data-marpit-advanced-background=pseudo]{pointer-events:none!important}svg>foreignObject>section[data-marpit-advanced-background-split]{width:100%;height:100%}</style></head><body><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-class="trans" data-theme="beamer" class="trans" style="--class:trans;--theme:beamer;">
+<h1 id="%E5%85%AD%E7%BA%A7%E5%A4%8D%E4%B9%A0">六级复习</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="beamer" data-marpit-pagination="2" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<p><img src="https://raw.githubusercontent.com/fisheryounggod/picsbed/master/20250607124139.png" alt="" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="beamer" data-marpit-pagination="3" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<p><img src="https://raw.githubusercontent.com/fisheryounggod/picsbed/master/20250607124627.png" alt="" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="beamer" data-marpit-pagination="4" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<p><img src="https://raw.githubusercontent.com/fisheryounggod/picsbed/master/20250607123709.png" alt="" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="beamer" data-marpit-pagination="5" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<p><img src="https://raw.githubusercontent.com/fisheryounggod/picsbed/master/20250607123944.png" alt="" style="width:950px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="beamer" data-marpit-pagination="6" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<p><strong>试卷结构</strong>：57 题，130 分钟（2 小时 10 分钟）。</p>
+<ol>
+<li><strong>写作</strong>：占 15% 分值，要求完成 1 篇短文写作，时间为 30 分钟。</li>
+<li><strong>听力理解</strong>：分值占 35%，总时间为 30 分钟。
+<ol>
+<li>长对话（8 题，8% 分值）</li>
+<li>听力篇章（7 题，7% 分值）</li>
+<li>讲话/报道/讲座（10 题，20% 分值）</li>
+</ol>
+</li>
+<li><strong>阅读理解</strong>：分值占 35%，总时间为 40 分钟。
+<ol>
+<li>词汇理解（选词填空，10 题，5% 分值）</li>
+<li>长篇阅读（匹配题，10 题，10% 分值）</li>
+<li>仔细阅读（选择题，10 题，20% 分值）</li>
+</ol>
+</li>
+<li><strong>翻译</strong>：占 15% 分值，要求完成 1 段汉译英段落翻译，时间为 30 分钟。</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-class="trans" data-theme="beamer" class="trans" style="--class:trans;--theme:beamer;">
+<h1 id="%E5%86%99%E4%BD%9C">写作</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="beamer" data-marpit-pagination="8" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h2 id="%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80">语法基础</h2>
+<h3 id="%E7%AE%80%E5%8D%95%E5%8F%A5">简单句</h3>
+<ol>
+<li>I do.</li>
+<li>You are beautiful !</li>
+<li>I love you.</li>
+<li>I will give you a kiss.</li>
+<li>You make me happy.</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="beamer" data-marpit-pagination="9" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E8%A2%AB%E5%8A%A8%E5%8F%A5">被动句</h3>
+<ol>
+<li>Cooperation <em>is claimed to</em> be more crucial than personal ability.</li>
+<li>Online shopping <em>is argued to</em> be a popular trend among the young and the old.</li>
+<li>Various measures, in the past decades, <em>have been taken</em> to prevent disasters.</li>
+<li>An annual report about its latest scientific findings and the prospect of the next year <em>was recently published</em> by Chinese Academy of Science（中国科学院）.</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="beamer" data-marpit-pagination="10" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E5%B9%B6%E5%88%97%E5%8F%A5">并列句</h3>
+<ol>
+<li>表示原因：because, in that, as, since + 句子 = because of / be responsible for / due to / owing to / thanks to + doing</li>
+<li>表示结果：so = hence = therefore = thereby = thus = consequently = in consequence = as a result / consequence</li>
+<li>表示对比：
+<ol>
+<li>表示“相似性的”对比：likewise = similarly = equally = simultaneously = at the same time =in the meanwhile</li>
+<li>表示“差异性的”对比：but = by contrast = conversely = alternatively = on the contrary = on the other hand = otherwise = while = whereas</li>
+</ol>
+</li>
+<li>表示递进：besides = also = in addition = moreover = furthermore = apart ∕ aside from</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="beamer" data-marpit-pagination="11" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<ol>
+<li>表示让步
+<ul>
+<li>① despite = in spite of = notwithstanding = although = though = as = while = even （if）= much as （用于句首）虽然 = granting ∕ granted that</li>
+<li>② certainly = of course = indeed = it is true that… 的确</li>
+<li>③ undoubtedly = there is no doubt that…毫无疑问的是……</li>
+<li>④ It may be true that… 或许真实的是……</li>
+<li>⑤ There is no denying that …不可否认的是……</li>
+<li>⑥ In effect ∕ fact ∕reality = indeed = virtually 实际上，事实上，的确</li>
+</ul>
+</li>
+<li>表示条件
+<ul>
+<li>① if = providing ∕ provided ∕ suppose ∕ supposing that 如果，假如</li>
+<li>② in case of = in the event of 万一……</li>
+</ul>
+</li>
+<li>表示目的：to = in order to = so as to</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="beamer" data-marpit-pagination="12" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<ol>
+<li>表示引出新对象
+<ul>
+<li>① About = concerning = regarding = with regard to = as for ∕ to = in respect of 关于</li>
+<li>② in terms of 就……而论，在……方面</li>
+<li>③ when it comes to … 当提到……时</li>
+</ul>
+</li>
+<li>表示强调
+<ul>
+<li>① Above all = most important</li>
+<li>② In effect ∕ fact ∕reality = indeed = virtually 事实上，实际上，的确，其实</li>
+</ul>
+</li>
+<li>表示举例：Like = such as = for instance ∕ example = take ∕ consider ∕ think of ∕ remember …（ as an example ）= a good case in point is…= from … to …（ to …）= to illustrate = as an illustration</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="beamer" data-marpit-pagination="13" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E5%A4%8D%E5%90%88%E5%8F%A5">复合句</h3>
+<h4 id="1-%E4%B8%BB%E8%AF%AD%E4%BB%8E%E5%8F%A5%E5%B8%B8%E8%A7%81%E5%8F%A5%E5%BC%8F%E7%BB%93%E6%9E%84it-isthat">1. 主语从句：常见句式结构：It is…that…</h4>
+<p>例：<em>It is beyond dispute that</em> university education promotes the progress of our society obviously.</p>
+<ol>
+<li>It is common knowledge that...</li>
+<li>It is my belief that... = I think that...</li>
+<li>It is self-evident that...</li>
+<li>It has been found that...</li>
+<li>It is beyond dispute that...</li>
+<li>It is universally acknowledged that...</li>
+<li>It has been widely accepted that...</li>
+<li>It is generally agreed that...</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="beamer" data-marpit-pagination="14" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h4 id="2-%E5%90%8C%E4%BD%8D%E8%AF%AD">2. 同位语</h4>
+<ol>
+<li>Garbage sorting, a necessary behavior to control pollution, proves quite crucial throughout china.</li>
+<li>Optimism, an active mentality, plays a key role in the general routine of everyday living.</li>
+<li>Hunting for jobs, <em>a hot topic among undergraduates</em>, has become the public concern recently.</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-theme="beamer" data-marpit-pagination="15" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h4 id="3-%E5%AE%9A%E8%AF%AD%E5%92%8C%E5%AE%9A%E8%AF%AD%E4%BB%8E%E5%8F%A5">3. 定语和定语从句</h4>
+<ol>
+<li>I love this kind girl.</li>
+<li>I love the girl of kindness.</li>
+<li>I love the girl as kind as an angel.</li>
+<li>I love the girl being as kind as an angel.</li>
+<li>I love the girl who keeps so kind.</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-theme="beamer" data-marpit-pagination="16" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h4 id="4-%E7%8A%B6%E8%AF%AD%E5%92%8C%E7%8A%B6%E8%AF%AD%E4%BB%8E%E5%8F%A5">4. 状语和状语从句</h4>
+<ul>
+<li>
+<p>I love my girlfriend.</p>
+</li>
+<li>
+<p>Keeping pets can cultivate the kindness of children although they sometimes bring much trouble for their owners.</p>
+<ul>
+<li>or because taking care of those little animals needs patience and care.</li>
+<li>or when there exists only a child in one family.</li>
+<li>or by taking a shower or talking with those little animals.</li>
+</ul>
+</li>
+<li>
+<p>They are singing songs although they have had class for the whole day.</p>
+</li>
+<li>
+<p><strong>They, a group of young men, who will take part in the examination of CET-6 are singing songs which were once popular when we were young.</strong></p>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-theme="beamer" data-marpit-pagination="17" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h2 id="%E9%95%BF%E7%9F%AD%E5%8F%A5%E5%8F%98%E6%8D%A2">长短句变换</h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>适用场景</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>长句</strong></td>
+<td>表达复杂思想、解释观点或理论、描写细致事物</td>
+<td>使文章富有气势</td>
+<td>易于语法错误或造成理解障碍</td>
+</tr>
+<tr>
+<td><strong>短句</strong></td>
+<td>陈述重要事实或想法</td>
+<td>简洁明了，易于理解</td>
+<td>堆砌让人感觉语言技巧不成熟</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>因此，在<font color=#f20713>实际写作中要注意长短句的交错使用。</font>
+<ol>
+<li><strong>短句变长句</strong><br />
+受汉语思维习惯影响，<font color=#f20713>很多考生往往会直接将脑子里的构思译成英语，而忽略句与句之间的联系，导致写出来的句子无法体现英语作为“形合语言”的特点。</font>因此，考生在平时写作时要注意前后句之间是否存在联系。</li>
+<li><strong>长句变短句</strong><br />
+句子的长短应根据表达的需要而定，有话则长，无话则短。<font color=#f20713>短句不仅指句子长度较短，也指句子内部结构精炼。</font></li>
+</ol>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-theme="beamer" data-marpit-pagination="18" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E4%B8%80%E5%B9%B6%E5%88%97%E5%8F%A5">一、并列句</h3>
+<table>
+<thead>
+<tr>
+<th><strong>句型分类</strong></th>
+<th><strong>说明</strong></th>
+<th><strong>类型</strong></th>
+<th><strong>特点与应用</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>并列句</strong></td>
+<td>表达相似性或差异性</td>
+<td><strong>相似性比较</strong><br />e.g. &quot;Like A, B also...&quot;</td>
+<td>常用 as ... as ...（和……一样……）, similar to 等结构，just as ， so （正如……，……也一样），share/have ... in common（在……方面有共同点）,bear similarities/resemblances to （和……具有相似之处）, the same is true of/with （……也是如此）,vice versa/the reverse is true（反之亦然）,no less （...） than（不比……少/差）/no more （...） than（不比……多/强）</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>差异性比较</strong><br />e.g. &quot;Compared with A, B...&quot;</td>
+<td>常用 than, unlike,  less （...） than（不比……少/差）/no more （...） than（不比……多/强）, is different/differ from  ... in that（……与……的不同之处在于……）, It is just the other way round （……，相反，……）, is just the opposite of（……恰恰与……相反）</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-theme="beamer" data-marpit-pagination="19" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E4%BA%8C%E4%B8%89%E5%A4%A7%E7%89%B9%E6%AE%8A%E5%8F%A5%E5%BC%8F">二、三大特殊句式</h3>
+<table>
+<thead>
+<tr>
+<th><strong>句型分类</strong></th>
+<th><strong>说明</strong></th>
+<th><strong>类型</strong></th>
+<th><strong>特点与应用</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. 强调句</strong></td>
+<td>突出句子重点成分</td>
+<td><strong>It- 强调结构</strong><br /><br /></td>
+<td><code>It is/was [被强调部分] that/who...</code>，可强调主语/宾语/状语等成分，e.g. &quot;It was the pioneers who really pushed the frontier further.&quot;</td>
+</tr>
+<tr>
+<td></td>
+<td>动词强调</td>
+<td>do/does/did + 谓语动词：  <strong>Do- 强调</strong><br /></td>
+<td>加强谓语动词的语气，e.g. &quot;I <span style="color:#f20713">do hope</span> people can realize...&quot;</td>
+</tr>
+<tr>
+<td><strong>2. 倒装句</strong></td>
+<td>英语中主要有两种倒装形式</td>
+<td><strong>全部倒装</strong></td>
+<td><span style="color:#f20713">由方位状语前置引起，常用于记叙/描写</span>，e.g. &quot;Here comes the bus.&quot;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>部分倒装</strong></td>
+<td><span style="color:#f20713">由否定词提前引起，常用于议论/说明</span>，e.g. &quot;Never have I seen such beauty.&quot;</td>
+</tr>
+<tr>
+<td><strong>3. 非谓语动词</strong></td>
+<td>动词的非限定形式，不作谓语</td>
+<td><strong>不定式</strong><br />e.g. &quot;To understand this, we need data.&quot;</td>
+<td><span style="color:#f20713">表目的/未来动作</span></td>
+</tr>
+<tr>
+<td></td>
+<td>包括三种主要形式</td>
+<td><strong>动名词</strong><br /></td>
+<td><span style="color:#f20713">具有名词性质</span>：e.g. &quot;Reading develops the mind.&quot;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>分词</strong><br /></td>
+<td><span style="color:#f20713">具有形容词/副词性质</span>：e.g. &quot;The book <span style="color:#f20713">written</span> by him is popular.&quot;</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-theme="beamer" data-marpit-pagination="20" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E4%BA%8C%E8%99%9A%E6%8B%9F%E8%AF%AD%E6%B0%94">二、虚拟语气</h3>
+<table>
+<thead>
+<tr>
+<th><strong>句型分类</strong></th>
+<th><strong>说明</strong></th>
+<th><strong>类型/示例</strong></th>
+<th><strong>特点与应用</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>虚拟语气</strong></td>
+<td>表示假设或非真实情况</td>
+<td><strong>与现在事实相反</strong><br />e.g. &quot;If I <span style="color:#f20713">were</span> you, I would go.&quot;</td>
+<td><span style="color:#f20713">条件从句：过去式<br />主句：would/could+动词原形</span></td>
+</tr>
+<tr>
+<td></td>
+<td>分为三种时间维度</td>
+<td><strong>与过去事实相反</strong><br />e.g. &quot;If you <span style="color:#f20713">had come</span> earlier, you <span style="color:#f20713">would have met</span> her.&quot;</td>
+<td><span style="color:#f20713">条件从句：had done<br />主句：would have done</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>与将来可能相反</strong><br />e.g. &quot;If it <span style="color:#f20713">should rain</span> tomorrow, we <span style="color:#f20713">would cancel</span> the trip.&quot;</td>
+<td><span style="color:#f20713">条件从句：should/were to do<br />主句：would+动词原形</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-theme="beamer" data-marpit-pagination="21" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E4%B8%BE%E4%BE%8B%E5%BC%BA%E8%B0%83%E5%8F%A5">举例：强调句</h3>
+<ol>
+<li>Nothing is more important than self-reliance in a competitive international environment.
+<ul>
+<li><u>It is nothing that</u> is more important than self-reliance in a competitive international environment.</li>
+</ul>
+</li>
+<li>Because of you, I failed in CET-6.
+<ul>
+<li><u>It is because of you that</u> I failed in CET-6.（就是因为你，我没有通过六级考试。）</li>
+</ul>
+</li>
+<li>There exist numerous factors to account for my argument.
+<ul>
+<li><u>It is numerous factors that</u> exist to account for my argument.（就是有很多的因素可以解释我的观点。）</li>
+</ul>
+</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-theme="beamer" data-marpit-pagination="22" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E4%B8%BE%E4%BE%8B%E5%80%92%E8%A3%85">举例：倒装</h3>
+<ol>
+<li>例： The white <u>balloon</u><em>（气球）</em> flew higher and higher till it vanished in the clouds.
+<ul>
+<li>优化： <em>Higher and higher flew the white balloon till it vanished in the clouds.</em></li>
+<li>分析： 原句是陈述语序，优化句<font color="#00b0f0">将方位状语 higher and higher 提前，引起了句子的全部倒装</font>：谓语 flew 提到了主语 the white balloon 之前。很明显，优化句是为了突出状语 higher and higher。</li>
+</ul>
+</li>
+<li>例： So many newspapers devoted so large a proportion of their space to the public concern about the dropouts in no other country.
+<ul>
+<li>分析： <em>In no other country did so many newspapers devote so large a proportion of their space to the public concern about the dropouts.</em></li>
+<li>分析： 原句是陈述语序，优化句<font color="#00b0f0">将句子中含有否定词的短语 in no other country 提前，引起了句子的部分倒装</font>：助动词 did 提到了主语 so many newspapers 之前。很明显，优化句是为了突出状语 in no other country。</li>
+</ul>
+</li>
+<li>否定词位于句首时：Never <u>have I</u> been so happy.</li>
+<li>含有 so…that…结构的句子，将 so 引导的部分位于句首时：
+<ul>
+<li>The issue is <font color=#f20713>so grave that</font> we cannot fail to pour attention to it.</li>
+<li>= So grave is the issue that……</li>
+</ul>
+</li>
+<li>only 引出的状语位于句首时：<font color=#f20713>Only in this way can we </font>settle the issue/relieve the phenomenon.</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-theme="beamer" data-marpit-pagination="23" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E4%B8%BE%E4%BE%8B">举例：</h3>
+<ol>
+<li>If you are friendly to others， they will hold <u>hospitable</u><em>（好客的，热情款待的）</em> attitude towards you and vice versa.</li>
+<li>For <u>top executives</u><em>（高层管理人员）</em>， the discount can be as high as 30 percent or 40 percent.</li>
+<li>The father is an ambitious man； the son’s ambition <em>is no less than</em> the father. （<font color=#f20713>短句</font>）</li>
+<li>He is not your friend. It is just the other way round. He is your rival. （<font color=#f20713>短句</font>）</li>
+<li>He didn’t have much enough work experience，which is the reason why he didn’t do the work very well.
+<ul>
+<li>优化：He didn’t do the work very well <font color=#f20713>for lack of experience</font>.</li>
+<li>分析：优化后的句子用<font color=#f20713>介词短语</font>代替了原句中的定语从句，并将原句中一些多余的修饰成分删掉，从而使句子言简意赅。<font color="#ff0000">使用非谓语动词短语是将复杂冗长的长句转换成简洁精炼的短句</font></li>
+</ul>
+</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-class="trans" data-theme="beamer" class="trans" style="--class:trans;--theme:beamer;">
+<h1 id="%E7%BF%BB%E8%AF%91">翻译</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-theme="beamer" data-marpit-pagination="25" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E8%8B%B1%E6%B1%89%E5%B7%AE%E5%BC%82%E5%AF%B9%E6%AF%94">英汉差异对比</h3>
+<ol>
+<li>汉语意合，英语形合</li>
+<li>英语多被动，汉语多主动何时用被动</li>
+<li>英语多长句，汉语多短句</li>
+</ol>
+<h3 id="%E7%BF%BB%E8%AF%91%E8%A7%A3%E9%A2%98%E6%96%B9%E6%B3%95">翻译解题方法</h3>
+<ol>
+<li>方法 1：非谓语动词</li>
+<li>方法 2：从句</li>
+<li>方法 3：连词</li>
+</ol>
+<p><strong>翻译步骤：</strong></p>
+<ol>
+<li><font color=#f20713>以意群为单位</font>读句子，确定<font color=#f20713>句子的时态和语态</font>;</li>
+<li>确定<font color=#f20713>句子的主干</font>，非主干部分用定语或状语来翻译;</li>
+<li>每句话翻译完之后都要看该句话和下句话的逻辑关系，<font color=#f20713>加逻辑关系词</font>。</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-class="trans" data-theme="beamer" class="trans" style="--class:trans;--theme:beamer;">
+<h1 id="%E9%98%85%E8%AF%BB">阅读</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-theme="beamer" data-marpit-pagination="27" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E4%BC%A0%E7%BB%9F%E9%98%85%E8%AF%BB8-%E5%88%86%E9%92%9F%E7%AF%87">传统阅读（8 分钟/篇）</h3>
+<ol>
+<li>指导原则：<br />
+1） 读首段以及各段的首句，把握文章的中心<br />
+2）顺序原则出题顺序与行文顺序一致</li>
+<li>题型分类：<br />
+（1） 主旨题：<br />
+（2）细节题：<em>用主旨做不出来的题都是细节题</em><br />
+方法：定位<br />
+a. <em>关键词</em>定位<br />
+b. <em>顺序定位</em><br />
+3）正确答案特征<br />
+a. 位置：定位句 + 定位句的前后句<br />
+b. <em>细节题的正确答案一定来自于文中某句话</em></li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-theme="beamer" data-marpit-pagination="28" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E9%95%BF%E7%AF%87%E9%98%85%E8%AF%BB-15-%E5%88%86%E9%92%9F">长篇阅读 （15 分钟）</h3>
+<ol>
+<li>看大标题，小标题<br />
+了解文章中心，推测文章大概内容及作者态度</li>
+<li>找题干中的定位词回头定位<br />
+提示：<font color=#f20713>一次性把 10 句话中关键词全标注出来 </font><br />
+1） 专有名词：时间，地点，数字，人名，地名，国家名<br />
+2） 固定概念：合成词、专业概念、特别说法、具体的名词<br />
+3）如以上定位线索没有，则是：常用动词、极端词、最高级、形容词、副词<br />
+4） 文章的中心词不能拿来定位</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-paginate="true" data-theme="beamer" data-marpit-pagination="29" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<ol>
+<li>重叠选项，得出答案<br />
+注意：找出明显定位词后，最好阅读一下该句子意思，和选项是否意思一致。</li>
+<li>查漏补缺<br />
+找不到定位的就最后再做<br />
+读每段的重点句：<br />
+1） 段首段尾句<br />
+2） 段中转折词，因果词，递进词后<br />
+注意：已对应两个句子的段落，可不用再阅读。<br />
+一般有 7-8 个左右句子可明显定位。</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-paginate="true" data-theme="beamer" data-marpit-pagination="30" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E9%80%89%E8%AF%8D%E5%A1%AB%E7%A9%BA7-8-%E5%88%86%E9%92%9F">选词填空（7-8 分钟）</h3>
+<ol>
+<li><font color=#f20713>标注选项中单词的词性</font>，归类；</li>
+<li>看文章首句，了解文章中心；</li>
+<li>根据每个空出现的位置判断需要填的单词的词性；</li>
+<li>把对应词性的选项带入，符合意思一致即正确答案。</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-class="trans" data-theme="beamer" class="trans" style="--class:trans;--theme:beamer;">
+<h1 id="%E5%90%AC%E5%8A%9B">听力</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-paginate="true" data-theme="beamer" data-marpit-pagination="32" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h2 id="%E5%81%9A%E9%A2%98%E6%96%B9%E6%B3%95font-colorff0000%E8%A7%86%E5%90%AC%E4%B8%80%E8%87%B4--%E9%A2%98%E6%96%87%E5%90%8C%E5%BA%8Ffont">做题方法：<font color="#ff0000">视听一致 + 题文同序</font></h2>
+<ul>
+<li>方法一：闭眼听完再做</li>
+<li>方法二：边看边做边听</li>
+</ul>
+<ol>
+<li>如何“视”：
+<ul>
+<li>脑：四不要一不急躁；不抠生词；不乱翻译；不久留；</li>
+<li>眼：眼珠活起来
+<ul>
+<li>横看不同点 + 默读（名词，动宾短语，否定，比较级，最高级）；</li>
+<li>竖看相同点。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如何“听”：
+<ul>
+<li>耳：原则——题文同序
+<ul>
+<li>选项单词读到越多，多为正确选项。（注意同义替换） 当选项中某单词被读到，该题目就开始。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-paginate="true" data-theme="beamer" data-marpit-pagination="33" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E9%95%BF%E5%AF%B9%E8%AF%9D%E7%AF%87%E7%AB%A0%E8%AE%B2%E5%BA%A7%E8%A7%A3%E9%A2%98%E5%8E%9F%E5%88%99">长对话/篇章/讲座解题原则</h3>
+<ol>
+<li>抓头原则</li>
+<li>重复原则（某一选项中词汇被重复读到）</li>
+<li>对话原则<br />
+（1）问题在于找节奏定位<br />
+（2）答句常出题重首尾</li>
+<li>关键词原则<br />
+① 极端词：first, firstly, at first, at least, only...<br />
+② 最高级：most, most important, best, worst<br />
+③ 逻辑关系词：因果，转折，递进，举例，结论观点：<br />
+① 人物观点（人名 + 介绍 + 动词 +that）<br />
+② experts/professors/scientists say<br />
+③ study/research/evidence shows</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-theme="beamer" data-marpit-pagination="34" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E7%8C%9C">猜</h3>
+<ol>
+<li>猜有最高级、极端、数字或者否定的选项 （概率大）</li>
+<li>含义相同的选项中选答案</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-paginate="true" data-theme="beamer" data-marpit-pagination="35" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E6%95%B0%E5%AD%97">数字</h3>
+<ul>
+<li>decade=10 years</li>
+<li>one fifth=20%</li>
+<li>50%=half</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-theme="beamer" data-marpit-pagination="36" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E6%B6%82%E5%8D%A1">涂卡</h3>
+<p><img src="https://raw.githubusercontent.com/fisheryounggod/picsbed/master/20250601184313.png" alt="" style="width:900px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-paginate="true" data-theme="beamer" data-marpit-pagination="37" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E5%A4%8D%E7%9B%98%E7%9C%9F%E9%A2%98">复盘真题</h3>
+<p>进行跟读练习，熟悉发音。（坚持到考前）</p>
+<p>①拿出一个片段，先听做题；</p>
+<p>②看着原文听录音；</p>
+<p>③听一句跟读一句；</p>
+<p>④ 闭眼盲听，直到每一个单词都听到。</p>
+<p>⑤对自己要求高的同学，可以对原文进行翻译总结。（听懂需要大量时间）</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-class="trans" data-theme="beamer" class="trans" style="--class:trans;--theme:beamer;">
+<h2 id="%E5%90%AC%E5%8A%9B%E5%BF%85%E5%A4%87%E6%8A%80%E8%83%BD">听力必备技能</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-paginate="true" data-theme="beamer" data-marpit-pagination="39" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="1-%E8%BF%9E%E8%AF%BB">(1) 连读</h3>
+<p><strong>连读</strong>是指在连贯地说话或朗读时，在同一个意群中，如果相邻的两个单词，前者末尾的音素与后者开头的音素符合一定的组合条件，就要将这两个因素相拼，读成一个音节。比如 <code>not at all</code> 这个短语连读为 /nɒtætɔːl/，听起来就像是一个单词，<font color=#f20713>连读构成的音节一般都不重读，只需自然地带过即可</font>。</p>
+<p>常见的连读方式有：</p>
+<ul>
+<li><strong>辅音 + 元音</strong>，自然地将辅音和元音相拼；</li>
+<li><strong>r 或 re+ 元音</strong>，前后相拼构成一个音节；</li>
+<li><strong>辅音 + 辅音</strong>，<font color=#f20713>相同辅音只需发一次音。</font></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-paginate="true" data-theme="beamer" data-marpit-pagination="40" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E8%BF%9E%E8%AF%BB%E4%BE%8B%E5%AD%90">连读例子</h3>
+<ul>
+<li>watering</li>
+<li>get up</li>
+<li>check out</li>
+<li>fill in/fill out</li>
+<li>pull in</li>
+<li>deaf ear</li>
+<li>for ever</li>
+<li>having <u>said all</u> that</li>
+<li>even <u>if it all</u> goes according to the plan</li>
+<li>saddest of all</li>
+<li>roll up door</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-paginate="true" data-theme="beamer" data-marpit-pagination="41" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="2-%E5%90%9E%E9%9F%B3-%E7%88%86%E7%A0%B4%E5%BC%B1%E8%AF%BB">(2) 吞音: 爆破/弱读</h3>
+<p>吞音之失爆：/b/、/p/、/d/、/t/、/g/、/k/+ 辅音，应发后一个辅音，前一个做发音准备。比如“Why don‘t you sit down?”中的<u>sit down 读作/sitdaʊn/</u>，听起来相当于/sidaʊn/。</p>
+<ul>
+<li>blackboard</li>
+<li>breakfast</li>
+<li>stop by</li>
+<li>lap top</li>
+<li>mid-term</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-paginate="true" data-theme="beamer" data-marpit-pagination="42" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<p>许多单词因为元音的弱化存在两种读音，分为强读和弱读。<font color=#f20713>常见的这类词，包括代词、连词、介词、冠词以及助动词。这些词大部分为虚词，一般都用弱读形式，但当要做强调或对比时，可用强读形式。</font></p>
+<p><strong>吞音之弱读</strong>：指一个单词中的元音音素在口语中由于说话时语速快或在句子中处于次要位置而不被强调等原因，不能发完全而标准的读音，却变为强度较弱的其他元音的现象。</p>
+<p><img src="https://raw.githubusercontent.com/fisheryounggod/picsbed/master/20250607132438.png" alt="#center" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-paginate="true" data-theme="beamer" data-marpit-pagination="43" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E5%90%9E%E9%9F%B3%E4%B8%BE%E4%BE%8B">吞音举例</h3>
+<ul>
+<li>red coat</li>
+<li>black bike</li>
+<li>next Tuesday</li>
+<li>seek out</li>
+<li>good morning</li>
+<li>I went there</li>
+<li>last night</li>
+<li>let me see</li>
+<li>back and forth</li>
+<li>atanyrate</li>
+<li>fortnight</li>
+<li>introduced</li>
+<li>all the cattle belonged to their tribe</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-paginate="true" data-theme="beamer" data-marpit-pagination="44" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="3-%E9%9F%B3%E8%B0%83">(3) 音调</h3>
+<p>句子中有单词要弱读，比如冠词、介词、连词、助动词和人称代词，也有一些单词要重读，重读的词大多为实词，如名词、形容词、数词、动词和副词等，在句子当中，有轻有重使得英语语音更流畅自然，形成英语句子的节奏美。</p>
+<p>所谓<strong>音调</strong>就是改变音高，使音调上升或下降。我们还可以像歌唱家那样突然抬高话语的音调。音调的这种上扬或下降叫语调。<strong>升调和降调是英语的基本语调。</strong></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-paginate="true" data-theme="beamer" data-marpit-pagination="45" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<p>请试读以下句子</p>
+<ul>
+<li>This is a table.</li>
+<li>We found Nimo.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-paginate="true" data-theme="beamer" data-marpit-pagination="46" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="4-%E5%8F%A3%E9%9F%B3">(4) 口音</h3>
+<p>四、六级听力考试以英音为主，混有美音和国际口音。<font color=#f20713>英式口音的语调抑扬顿挫，升降调较为明显，调域之间变化较大</font>，美式口音的语调相对较为平缓，调域变化较小。在英语听力考试中，考生会因为口音干扰而将某些词听错。常见易听错单词有：</p>
+<p><img src="https://raw.githubusercontent.com/fisheryounggod/picsbed/master/20250607133322.png" alt="#center" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-class="trans" data-theme="beamer" class="trans" style="--class:trans;--theme:beamer;">
+<h2 id="%E5%90%AC%E5%8A%9B%E6%94%BB%E5%85%B3%E7%A7%98%E7%B1%8D">听力攻关秘籍</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-paginate="true" data-theme="beamer" data-marpit-pagination="48" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E7%A7%98%E7%B1%8D%E4%B8%80%E6%8E%8C%E6%8F%A1%E5%90%AC%E5%8A%9B%E7%9A%84%E7%89%B9%E6%80%A7">秘籍一：掌握听力的特性</h3>
+<ul>
+<li>战听力考试第一关，过的就是心理素质关。</li>
+<li>做听力练习时，尽量<font color=#f20713>模拟真实的考场环境</font>，在规定的时间，做规定的动作。</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-paginate="true" data-theme="beamer" data-marpit-pagination="49" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E7%A7%98%E7%B1%8D%E4%BA%8C%E5%8F%91%E9%9F%B3%E6%98%AF%E7%AC%AC%E4%B8%80%E4%BD%8D%E7%9A%84">秘籍二：发音是第一位的</h3>
+<p>虽然词汇量很大，但就是听不懂，或者听到的却是与其音、形、义相似的另外一个单词，究其原因有以下两种：</p>
+<ul>
+<li>一是<strong>自己发音不标准</strong>，平时都是按照自己不标准的发音记忆单词，在发音标准的听力考试中，自然难以辨别出来；</li>
+<li>二是<strong>不熟悉英语的发音规则</strong>，如连读、失爆、音调、口音等现象。</li>
+<li>除此之外，英语中<strong>同音异形词</strong>对听力理解也会造成一定干扰</li>
+<li>所以，<font color=#f20713>辨音能力是考生听力基本功强弱的直接表现，也是考生突破听力理解的关键一环。</font></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-paginate="true" data-theme="beamer" data-marpit-pagination="50" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E7%A7%98%E7%B1%8D%E4%B8%89%E6%B5%8F%E8%A7%88%E9%80%89%E9%A1%B9%E7%9A%84%E8%83%BD%E5%8A%9B">秘籍三：浏览选项的能力</h3>
+<ul>
+<li>浏览选项不单需要勾画重要词汇，更<font color=#f20713>重要的是要看穿选项背后的问题</font>。</li>
+<li>浏览选项的<font color=#f20713>目的就是拼贴整合信息，预测听力材料的大致内容，提前脑补听力场景</font>。</li>
+<li><strong>要留意以下内容</strong>：
+<ul>
+<li>选项的<strong>不同之处</strong>，如人称、姓名、地点、时间及动词等。这些不同之处，会提示考生听音时要甄别的细节信息。</li>
+<li>选项<strong>对立的情况</strong>，如果四个选项中有一个选项与其他三个意义相反，那么这个选项很有可能是正确选项。</li>
+<li>听力考试中，对话内容大多是真实生活场景的再现，如果<strong>有违背生活常识的选项，考生可提前做出预判</strong>。</li>
+</ul>
+</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-paginate="true" data-theme="beamer" data-marpit-pagination="51" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E7%A7%98%E7%B1%8D%E5%9B%9B%E9%A2%A0%E5%80%92%E5%81%9A%E9%A2%98%E7%9A%84%E6%B5%81%E7%A8%8B">秘籍四：颠倒做题的流程</h3>
+<p><font color=#f20713>每一个正确选项的设计都对应有一句原文编题句，那么答案和原文编题句之间的关系有且只有一种，就是同义替换。</font></p>
+<p>考生在<font color=#f20713>做听力时，只要能够快速识别原文编题句所对应的选项，就可以直接预选。</font>相反，如果听完录音再去答题，对于大多数基础薄弱、听力素养不高的考生而言，做对的概率是极低的。</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-class="trans" data-theme="beamer" class="trans" style="--class:trans;--theme:beamer;">
+<h2 id="%E5%90%AC%E5%8A%9B%E5%88%86%E9%A2%98%E5%9E%8B%E8%A7%A3%E6%9E%90">听力分题型解析</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-paginate="true" data-theme="beamer" data-marpit-pagination="53" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h2 id="%E5%90%AC%E5%8A%9B%E5%B8%B8%E8%A7%81%E8%80%83%E7%82%B9">听力常见考点:</h2>
+<h3 id="%E8%80%83%E7%82%B9-1-%E4%B8%BB%E6%97%A8--%E8%A7%82%E7%82%B9--%E6%8E%AA%E6%96%BD">考点 1: 主旨 + 观点 + 措施</h3>
+<p>Q1:What is the news report mainly about?</p>
+<p>Q2:What did somebody sayabout...? /What were somebody expected to do...?</p>
+<p>Q3:What is the cause of the problem according to...?</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="54" data-paginate="true" data-theme="beamer" data-marpit-pagination="54" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55">
+<h3 id="%E8%80%83%E7%82%B9-2-%E7%BB%86%E8%8A%82">考点 2: 细节</h3>
+<p>Q1: Why?</p>
+<p>Q2: What happened...?</p>
+<p>Q3: What is the probable reason of...?</p>
+<p>Q4: How?</p>
+<p>Q5: What do we learn about...?</p>
+<p>Q6: What do we know about...?</p>
+<p>Q7: How many people...?</p>
+<p>Q8: When...?</p>
+<p>Q9: Where...?</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="55" data-paginate="true" data-theme="beamer" data-marpit-pagination="55" style="--paginate:true;--theme:beamer;" data-marpit-pagination-total="55"></section>
+<script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{constructor(){super(),this.svgPreserveAspectRatio="xMinYMid meet";const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver(((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()}))}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){var t,s,o,r,a;this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=null!==(t=this.shadowRoot.querySelector(`div[${e}]`))&&void 0!==t?t:void 0;const l=this.svg;this.svg=null!==(o=null===(s=this.wrapper)||void 0===s?void 0:s.querySelector(`svg[${i}]`))&&void 0!==o?o:void 0,this.svg!==l&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=null!==(a=null===(r=this.svg)||void 0===r?void 0:r.querySelector(`span[${n}]`))&&void 0!==a?a:void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame((()=>{t.style.display=""})))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){var t,e,i,n,s,o,r;let a=Math.ceil(null!==(e=null===(t=this.containerSize)||void 0===t?void 0:t.width)&&void 0!==e?e:0);const l=Math.ceil(null!==(n=null===(i=this.containerSize)||void 0===i?void 0:i.height)&&void 0!==n?n:0);void 0!==this.dataset.downscaleOnly&&(a=Math.max(a,null!==(o=null===(s=this.wrapperSize)||void 0===s?void 0:s.width)&&void 0!==o?o:0));const c=null===(r=this.svg)||void 0===r?void 0:r.querySelector(":scope > foreignObject");if(null==c||c.setAttribute("width",`${a}`),null==c||c.setAttribute("height",`${l}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${a} ${l}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=a<=0||l<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const o=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this.attachShadow({mode:"open"})}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_update(){const t=i?`<style>:host { ${i} }</style>`:"";let e="<slot></slot>";const{autoScaling:n}=this.dataset;if(void 0!==n){e=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===n?"data-downscale-only":""}>${e}</marp-auto-scaling>`}this.shadowRoot.innerHTML=t+e}};let r;const a=Symbol();let l;const c="marpitSVGPolyfill:setZoomFactor,",d=Symbol(),g=Symbol();const h=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[u]:[],i={then:e=>(t?(async()=>{if(void 0===l){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise((t=>{i.addEventListener("load",(()=>t()))}));i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),l=e.getImageData(5,5,1,1).data[3]<128}return l})().then((t=>{null==e||e(t?[u]:[])})):null==e||e([]),i)};return Object.assign(e,i)};let p,m;function u(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[g]||(Object.defineProperty(window,g,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",(({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(c)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(m=i)}}catch(t){console.error(t)}})));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,s,o,r;t.style.transform||(t.style.transform="translateZ(0)");const a=i||m||t.currentScale||1;p!==a&&(p=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(r=null===(o=n.y)||void 0===o?void 0:o.baseVal.value)&&void 0!==r?r:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}})),!1!==n&&Array.from(e.querySelectorAll("iframe"),(({contentWindow:t})=>{null==t||t.postMessage(`${c}${n}`,"null"===window.origin?"*":window.origin)}))}function v({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[d])return t[d];let e=!0;const i=()=>{e=!1,delete t[d]};Object.defineProperty(t,d,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await h()}finally{s=!0}})();const o=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(o)};return o(),i}(e);return t?(i(),()=>{}):i}p=1,m=void 0;const b=Symbol(),w=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,a=t[n].proto();null!=r||(r=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is")),r&&a!==HTMLElement?i||customElements.define(s,o(a,{style:t[n].style}),{extends:n}):(i||customElements.define(s,o(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach((t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)})))}window[a]=!0})(e),e[b])return e[b];const i=v({target:e}),n=()=>{i(),delete e[b]},l=Object.assign(n,{cleanup:n,update:()=>w(e)});return Object.defineProperty(e,b,{configurable:!0,value:l}),l},y=document.currentScript;w(y?y.getRootNode():document)}();
+</script></foreignObject></svg></body></html>
